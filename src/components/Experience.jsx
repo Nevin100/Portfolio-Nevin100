@@ -1,119 +1,100 @@
 import { EXPERIENCES } from "../utils";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import { FiBriefcase, FiCalendar } from "react-icons/fi";
 
 function Experience() {
   return (
     <>
       <Helmet>
         <title>Experience | Nevin Bali – Full Stack & GenAI Engineer</title>
-        <meta
-          name="description"
-          content="Professional experience of Nevin Bali, Full Stack Software Engineer, including SDE internships, production MVP ownership, cloud-native systems, and real-world engineering impact."
-        />
-        <meta
-          name="keywords"
-          content="Nevin Bali experience, SDE Intern, Full Stack Engineer experience, GenAI projects, Next.js FastAPI Docker"
-        />
+        <meta name="description" content="Professional experience of Nevin Bali." />
       </Helmet>
 
       <section
         id="experience"
-        className="border-b border-neutral-900 pb-16"
-        aria-labelledby="experience-heading"
+        className="relative py-24 px-6 lg:px-20 bg-[#0a0a0a] border-b border-neutral-900"
       >
-        {/* Heading */}
-        <motion.h2
-          id="experience-heading"
-          role="heading"
-          aria-level="2"
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: -80 }}
-          transition={{ duration: 0.6 }}
-          className="my-20 text-center text-5xl md:text-6xl font-extrabold
-                     bg-gradient-to-r from-purple-400 via-pink-400 to-sky-400
-                     bg-clip-text text-transparent drop-shadow-md"
-        >
-          Professional Experience
-        </motion.h2>
+        {/* Section Header */}
+        <div className="mb-20 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-6xl font-black tracking-tight text-white inline-block"
+          >
+            CAREER <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-400">MILESTONES</span>
+          </motion.h2>
+        </div>
 
-        {/* Experience Timeline */}
-        <div className="px-4 max-w-6xl mx-auto">
-          {EXPERIENCES.map((experience, index) => (
-            <article
-              key={index}
-              className="mb-14 flex flex-col lg:flex-row lg:gap-12"
-              aria-label={`${experience.role} at ${experience.company}`}
-            >
-              {/* Duration */}
-              <motion.div
-                initial={{ x: -40, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className="lg:w-1/4"
+        {/* Timeline Wrapper */}
+        <div className="relative max-w-5xl mx-auto">
+          {/* Vertical Line (Hidden on mobile, visible on desktop) */}
+          <div className="absolute left-0 lg:left-1/2 transform lg:-translate-x-1/2 top-0 h-full w-[2px] bg-gradient-to-b from-purple-500/50 via-neutral-800 to-transparent" />
+
+          <div className="space-y-16">
+            {EXPERIENCES.map((experience, index) => (
+              <motion.article
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className={`relative flex flex-col lg:flex-row items-center justify-between w-full ${
+                  index % 2 === 0 ? "lg:flex-row-reverse" : ""
+                }`}
               >
-                <time className="text-base md:text-lg font-medium text-neutral-400">
-                  {experience.Duration}
-                </time>
-              </motion.div>
+                {/* Timeline Dot */}
+                <div className="absolute left-[-9px] lg:left-1/2 transform lg:-translate-x-1/2 w-5 h-5 bg-[#0a0a0a] border-4 border-purple-500 rounded-full z-10 shadow-[0_0_10px_rgba(168,85,247,0.5)]" />
 
-              {/* Content */}
-              <div className="mt-3 lg:mt-0 lg:w-3/4 max-w-4xl">
-                {/* Role + Company */}
-                <header>
-                  <motion.h3
-                    initial={{ x: -40, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className="text-xl md:text-2xl font-semibold text-white"
-                  >
-                    {experience.role}
-                    <span
-                      className="ml-2 text-lg md:text-xl font-medium
-                                 bg-gradient-to-r from-purple-300 via-pink-300 to-sky-400
-                                 bg-clip-text text-transparent"
-                    >
-                      @ {experience.company}
-                    </span>
-                  </motion.h3>
-                </header>
-
-                {/* Description */}
-                <motion.p
-                  initial={{ x: -40, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.6 }}
-                  className="mt-3 mb-5 text-base md:text-lg leading-relaxed
-                             text-neutral-400"
-                >
-                  {experience.description}
-                </motion.p>
-
-                {/* Tech Stack */}
-                <div
-                  className="flex flex-wrap gap-2"
-                  role="list"
-                  aria-label="Technologies used"
-                >
-                  {experience.technologies.map((tech, i) => (
-                    <motion.span
-                      key={i}
-                      role="listitem"
-                      initial={{ y: 10, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.4, delay: i * 0.05 }}
-                      className="rounded-full bg-neutral-800/80
-                                 px-4 py-1.5 text-sm font-medium
-                                 text-purple-300 border border-neutral-700/60"
-                      title={tech}
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
+                {/* Date Label (Desktop Only) */}
+                <div className="hidden lg:block w-[45%] text-right px-6">
+                   <div className={`flex items-center gap-2 text-neutral-500 font-bold uppercase tracking-widest text-sm ${index % 2 === 0 ? "justify-start" : "justify-end"}`}>
+                     {index % 2 !== 0 && <span>{experience.Duration}</span>}
+                     <FiCalendar className="text-purple-400" />
+                     {index % 2 === 0 && <span>{experience.Duration}</span>}
+                   </div>
                 </div>
-              </div>
-            </article>
-          ))}
+
+                {/* Experience Card */}
+                <div className="w-full lg:w-[45%] bg-neutral-900/40 border border-neutral-800 p-8 rounded-3xl backdrop-blur-sm hover:border-neutral-700 transition-colors shadow-2xl ml-6 lg:ml-0">
+                  {/* Mobile Date Label */}
+                  <div className="flex lg:hidden items-center gap-2 text-neutral-500 font-bold text-xs mb-4 uppercase tracking-tighter">
+                    <FiCalendar className="text-purple-400" /> {experience.Duration}
+                  </div>
+
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="p-3 bg-purple-500/10 rounded-2xl text-purple-400">
+                      <FiBriefcase size={24} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-none">
+                        {experience.role}
+                      </h3>
+                      <p className="text-lg font-medium bg-gradient-to-r from-purple-400 to-sky-400 bg-clip-text text-transparent mt-1">
+                        {experience.company}
+                      </p>
+                    </div>
+                  </div>
+
+                  <p className="text-neutral-400 leading-relaxed text-sm md:text-base mb-6">
+                    {experience.description}
+                  </p>
+
+                  {/* Skills/Tech Used */}
+                  <div className="flex flex-wrap gap-2">
+                    {experience.technologies.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 bg-neutral-800 text-neutral-400 text-[11px] font-bold uppercase tracking-wider rounded-md border border-neutral-700"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </div>
         </div>
       </section>
     </>

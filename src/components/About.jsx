@@ -1,209 +1,155 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import { useState, useEffect, useRef } from "react";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, GraduationCap, MapPin, Code2, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
-const staggerContainer = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function About() {
-  const headerRef = useRef(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      if (!headerRef.current) return;
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
 
-      const rect = headerRef.current.getBoundingClientRect();
-
-      setMousePosition({
-        x: (e.clientX - rect.left) / rect.width,
-        y: (e.clientY - rect.top) / rect.height,
-      });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  const handleMouseMove = (e) => {
+    if (!containerRef.current) return;
+    const { left, top, width, height } = containerRef.current.getBoundingClientRect();
+    setMousePosition({
+      x: ((e.clientX - left) / width) * 100,
+      y: ((e.clientY - top) / height) * 100,
+    });
+  };
 
   return (
     <>
       <Helmet>
         <title>About | Nevin Bali – Full Stack & GenAI Engineer</title>
-
-        <meta
-          name="description"
-          content="Nevin Bali is a Full Stack Software Engineer specializing in Next.js, GenAI, FastAPI, Docker, and scalable production-grade web applications."
-        />
-
-        <meta
-          name="keywords"
-          content="Nevin Bali, Full Stack Developer, GenAI Engineer, Next.js, DevOps, SaaS, MERN Stack"
-        />
-
-        <meta name="author" content="Nevin Bali" />
+        <meta name="description" content="Nevin Bali is a Full Stack Software Engineer specializing in Next.js, GenAI, and cloud architectures." />
       </Helmet>
+
       <section
         id="about"
-        className="relative w-full py-20 md:py-28 px-4 bg-transparent"
+        ref={containerRef}
+        onMouseMove={handleMouseMove}
+        className="relative min-h-screen py-24 overflow-hidden bg-[#0a0a0a]"
       >
-        {/* Glow Background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-16 left-10 w-44 h-44 bg-purple-400/20 blur-3xl rounded-full" />
-          <div className="absolute bottom-10 right-10 w-72 h-72 bg-pink-400/20 blur-3xl rounded-full" />
-        </div>
+        {/* Animated Background Grid */}
+        <div className="absolute inset-0 z-0 opacity-20" 
+             style={{ backgroundImage: `radial-gradient(#27272a 1px, transparent 1px)`, backgroundSize: '32px 32px' }} />
+        
+        {/* Floating Ambient Glows */}
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-purple-600/10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-sky-600/10 blur-[120px] rounded-full" />
 
-        <div className="container mx-auto max-w-7xl relative z-10">
-          <motion.article
-            ref={headerRef}
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="relative rounded-2xl border border-zinc-800/60
-             bg-zinc-900/30 backdrop-blur-xl shadow-2xl
-             p-6 sm:p-8 md:p-12"
-            style={{
-              background: `radial-gradient(
-              circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%,
-              rgba(192,132,252,0.14),
-              rgba(236,72,153,0.08),
-              rgba(0,0,0,0)
-            )`,
-            }}
+        <div className="container mx-auto max-w-6xl px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative group rounded-[2.5rem] border border-white/5 bg-zinc-900/20 backdrop-blur-2xl p-8 md:p-16 overflow-hidden shadow-2xl shadow-purple-500/5"
           >
-            {/* Neon Frame */}
-            <div className="absolute inset-0 rounded-2xl pointer-events-none">
-              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-purple-400 via-pink-400 to-sky-400" />
-              <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-purple-400 via-pink-400 to-sky-400" />
-              <div className="absolute inset-y-0 left-0 w-[2px] bg-gradient-to-b from-purple-400 via-pink-400 to-sky-400" />
-              <div className="absolute inset-y-0 right-0 w-[2px] bg-gradient-to-b from-purple-400 via-pink-400 to-sky-400" />
+            {/* Dynamic Spotlight Effect */}
+            <div 
+              className="absolute inset-0 pointer-events-none opacity-40 transition-opacity duration-500 group-hover:opacity-100"
+              style={{
+                background: `radial-gradient(600px circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(168, 85, 247, 0.15), transparent 40%)`
+              }}
+            />
+
+            {/* Header */}
+            <div className="relative mb-16">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                className="flex items-center gap-3 mb-6"
+              >
+                <div className="h-[1px] w-12 bg-purple-500" />
+                <span className="text-purple-400 font-bold tracking-[0.2em] text-xs uppercase">The Story So Far</span>
+              </motion.div>
+              
+              <h2 className="text-5xl md:text-8xl font-black text-white tracking-tighter mb-6">
+                ABOUT <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-sky-400">ME.</span>
+              </h2>
+              
+              <div className="flex flex-wrap gap-4 text-zinc-500 font-medium">
+                <span className="flex items-center gap-2"><Code2 size={16} className="text-purple-500" /> Full Stack</span>
+                <span className="flex items-center gap-2"><Sparkles size={16} className="text-pink-500" /> GenAI Specialist</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-zinc-800 self-center" />
+                <span>SaaS Builder</span>
+              </div>
             </div>
 
-            {/* Heading */}
-            <motion.header
-              variants={fadeUp}
-              className="text-center mb-10 md:mb-14"
-            >
-              <h2
-                className="text-4xl sm:text-5xl md:text-6xl font-extrabold
-                           bg-gradient-to-r from-purple-400 via-pink-400 to-sky-400
-                           bg-clip-text text-transparent"
-              >
-                About Me
-              </h2>
+            {/* Content Body */}
+            <div className="grid lg:grid-cols-[1.5fr,1fr] gap-16">
+              <div className="space-y-8 text-lg text-zinc-400 leading-relaxed font-medium">
+                <p className="first-letter:text-5xl first-letter:font-black first-letter:text-white first-letter:mr-3 first-letter:float-left">
+                  I’m <strong className="text-white">Nevin Bali</strong>, a Software Engineer who thrives at the intersection of complex code and seamless user experiences. 
+                  Specializing in <strong>Next.js, TypeScript, and FastAPI</strong>, I build systems that aren&apos;t just functional, but scalable for real-world traffic.
+                </p>
 
-              <p className="mt-4 text-zinc-400 max-w-2xl mx-auto text-md sm:text-base">
-                Full Stack Engineer • GenAI • Cloud & DevOps • SaaS Builder
-              </p>
-            </motion.header>
+                <p>
+                  As an <strong className="text-purple-400">SDE Intern</strong>, I’ve had the privilege of owning entire production lifecycles. 
+                  From architecting admin dashboards to integrating secure payment gateways, I focus on building infrastructure that stands the test of live environments.
+                </p>
 
-            {/* Content */}
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="space-y-6 max-w-4xl mx-auto text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed"
-            >
-              <p>
-                I’m <strong className="text-white">Nevin Bali</strong>, a Full
-                Stack Software Engineer with hands-on experience building
-                scalable, secure, and production-grade web applications. I have
-                worked end-to-end on real-world MVPs using{" "}
-                <strong>Next.js, TypeScript, FastAPI</strong>, and modern cloud
-                architectures, delivering systems used by real users in live
-                environments.
-              </p>
-
-              <p>
-                During my internships as an <strong>SDE Intern</strong>, I owned
-                and developed complete production systems — from frontend
-                interfaces to backend services, authentication, databases, and
-                deployments. My work includes building admin dashboards, payment
-                integrations, data-driven analytics platforms, and cloud-managed
-                applications using
-                <strong> PostgreSQL, MongoDB, Docker, Firebase, JWT</strong>,
-                and CI/CD pipelines.
-              </p>
-
-              <p>
-                I actively build and experiment in the
-                <strong> GenAI and SaaS</strong> space, developing AI-powered
-                products such as cold email generators, interview preparation
-                platforms, and newsletter automation tools using{" "}
-                <strong>Groq LLMs (Llama v3)</strong>. I focus on performance,
-                clean architecture, and real-world usability while integrating
-                AI, cloud infrastructure, and automation into scalable
-                full-stack systems.
-              </p>
-            </motion.div>
-
-            {/* Info Cards */}
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12 max-w-4xl mx-auto"
-            >
-              <div className="rounded-xl bg-zinc-800/40 border border-zinc-700/60 p-5">
-                <h4 className="text-white font-semibold">Education</h4>
-                <p className="text-zinc-300 mt-1">B.Tech – Computer Science</p>
-                <p className="text-zinc-400 text-sm">
-                  Maharaja Surajmal Institute of Technology (2023–2027)
+                <p>
+                  My recent obsession? <strong className="text-sky-400">GenAI</strong>. I’ve been shipping products powered by 
+                  <strong> Groq (Llama v3)</strong>, bridging the gap between raw LLM capabilities and practical, automated tools for modern businesses.
                 </p>
               </div>
 
-              <address className="not-italic rounded-xl bg-zinc-800/40 border border-zinc-700/60 p-5">
-                <h4 className="text-white font-semibold">Location</h4>
-                <p className="text-zinc-300 mt-1">New Delhi, India</p>
-                <p className="text-zinc-400 text-sm">
-                  Open to Full-time • Remote • Contract • Freelance
-                </p>
-              </address>
-            </motion.div>
-
-            {/* Resume CTA */}
-            <div className="flex justify-center mt-14 pt-8 border-t border-zinc-700/50">
-              <Link
-                to="https://drive.google.com/file/d/1b6JlVv2VSWQwjyOtI8-EnSZTB7rQQ0yz/view"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.96 }}
-                  className="flex items-center gap-2
-                                 bg-gradient-to-r from-purple-400 via-pink-400 to-sky-400
-                                 hover:from-purple-500 hover:via-pink-500 hover:to-sky-500
-                                 text-white px-6 py-3 rounded-xl font-medium
-                                 shadow-lg transition-transform hover:scale-105"
+              {/* Side Stats/Cards */}
+              <div className="space-y-6">
+                <motion.div 
+                  whileHover={{ x: 10 }}
+                  className="p-6 rounded-3xl bg-white/5 border border-white/5 flex items-start gap-5"
                 >
-                  View Resume
-                  <ExternalLink className="h-4 w-4" />
-                </motion.button>
-              </Link>
+                  <div className="p-3 rounded-2xl bg-purple-500/10 text-purple-400">
+                    <GraduationCap size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold text-lg">Education</h4>
+                    <p className="text-zinc-400 text-sm leading-snug mt-1">
+                      B.Tech – Computer Science<br />
+                      MSIT, New Delhi (2023–2027)
+                    </p>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                   whileHover={{ x: 10 }}
+                  className="p-6 rounded-3xl bg-white/5 border border-white/5 flex items-start gap-5"
+                >
+                  <div className="p-3 rounded-2xl bg-sky-500/10 text-sky-400">
+                    <MapPin size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold text-lg">Location</h4>
+                    <p className="text-zinc-400 text-sm mt-1">
+                      New Delhi, India<br />
+                      Remote • Full-time • Freelance
+                    </p>
+                  </div>
+                </motion.div>
+
+                <div className="pt-6">
+                  <Link
+                    to="https://drive.google.com/file/d/1b6JlVv2VSWQwjyOtI8-EnSZTB7rQQ0yz/view"
+                    target="_blank"
+                    className="group flex items-center justify-center gap-3 w-full bg-white text-black py-4 rounded-2xl font-bold transition-all hover:bg-gradient-to-r hover:from-purple-400 hover:to-sky-400 hover:text-white"
+                  >
+                    View Full Resume
+                    <ExternalLink size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
             </div>
-          </motion.article>
+          </motion.div>
         </div>
       </section>
     </>

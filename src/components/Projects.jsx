@@ -1,208 +1,158 @@
 import { PROJECTS } from "../utils";
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { FiGithub, FiSearch } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useMemo } from "react";
+import { FiGithub, FiSearch, FiChevronDown, FiChevronUp,FiExternalLink } from "react-icons/fi";
 import { Helmet } from "react-helmet-async";
 
 function Projects() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [expandedIndexes, setExpandedIndexes] = useState(new Set());
+  const [expandedIndex, setExpandedIndex] = useState(null);
 
-  const filteredProjects = PROJECTS.filter((project) => {
-    const search = searchTerm.toLowerCase();
-    return (
-      project.title.toLowerCase().includes(search) ||
-      project.description.toLowerCase().includes(search) ||
-      project.technologies.some((tech) =>
-        tech.toLowerCase().includes(search)
-      )
-    );
-  });
+  // Memoized filter for performance
+  const filteredProjects = useMemo(() => {
+    return PROJECTS.filter((project) => {
+      const search = searchTerm.toLowerCase();
+      return (
+        project.title.toLowerCase().includes(search) ||
+        project.technologies.some((tech) => tech.toLowerCase().includes(search))
+      );
+    });
+  }, [searchTerm]);
 
   const toggleExpand = (index) => {
-    setExpandedIndexes((prev) => {
-      const next = new Set(prev);
-      next.has(index) ? next.delete(index) : next.add(index);
-      return next;
-    });
+    setExpandedIndex(expandedIndex === index ? null : index);
   };
 
   return (
     <>
       <Helmet>
         <title>Projects | Nevin Bali – Full Stack & GenAI Engineer</title>
-        <meta
-          name="description"
-          content="Explore real-world full stack, GenAI, and SaaS projects built by Nevin Bali using Next.js, React, FastAPI, Docker, cloud platforms, and modern system architectures."
-        />
-        <meta
-          name="keywords"
-          content="Nevin Bali projects, full stack projects, GenAI projects, SaaS portfolio, React Next.js projects"
-        />
+        <meta name="description" content="Explore real-world full stack and GenAI projects." />
       </Helmet>
 
-      <section
-        id="projects"
-        className="border-b border-neutral-900 pb-28 px-4 sm:px-8 lg:px-16"
-        aria-labelledby="projects-heading"
-      >
-        {/* Heading */}
-        <motion.h2
-          id="projects-heading"
-          role="heading"
-          aria-level="2"
-          initial={{ opacity: 0, y: -60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="my-24 text-center text-4xl sm:text-5xl lg:text-6xl pb-3
-                     font-extrabold bg-gradient-to-r from-purple-400 via-pink-400 to-sky-400
-                     bg-clip-text text-transparent"
-        >
-          Featured Projects
-        </motion.h2>
+      <section id="projects" className="relative py-24 px-6 lg:px-20 bg-[#0a0a0a] overflow-hidden">
+        {/* Background Glows */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-sky-600/10 blur-[120px] rounded-full" />
 
-        {/* Search */}
-        <div className="mb-14 flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <div className="flex items-center gap-2 text-white font-semibold">
-            <FiSearch />
-            Search Projects
+        <div className="relative z-10 max-w-7xl mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-20">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-5xl md:text-7xl font-black tracking-tighter text-white mb-6"
+            >
+              MY <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400">PROJECTS</span>
+            </motion.h2>
+            
+            {/* Sleek Search Bar */}
+            <div className="relative max-w-md mx-auto group">
+              <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 group-focus-within:text-purple-400 transition-colors" />
+              <input
+                type="text"
+                placeholder="Filter by tech or title..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-12 pr-4 py-3 bg-neutral-900/50 border border-neutral-800 rounded-2xl text-white backdrop-blur-xl focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all shadow-2xl"
+              />
+            </div>
           </div>
-          <input
-            type="text"
-            placeholder="Search by tech, title, or feature…"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full sm:w-80 rounded-xl bg-neutral-900
-                       border border-neutral-700 px-4 py-2
-                       text-sm sm:text-base text-white
-                       placeholder:text-neutral-500
-                       focus:outline-none focus:ring-2 focus:ring-purple-600"
-          />
-        </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 max-w-7xl mx-auto">
-          {filteredProjects.map((project, index) => {
-            const isExpanded = expandedIndexes.has(index);
-
-            return (
-              <motion.article
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: index * 0.08 }}
-                className="relative flex flex-col rounded-2xl
-                           bg-neutral-900/60 backdrop-blur-md
-                           border border-neutral-800 shadow-lg
-                           hover:shadow-purple-600/20 transition-all overflow-hidden"
-                aria-label={project.title}
-              >
-                {/* Accent */}
-                <div className="h-1 w-full bg-gradient-to-r from-purple-400 via-pink-400 to-sky-400" />
-
-                {/* GitHub */}
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="View GitHub repository"
-                  className="absolute top-4 right-4 z-10
-                             bg-neutral-900/70 p-2 rounded-full
-                             text-purple-400 hover:text-purple-300"
-                >
-                  <FiGithub size={22} />
-                </a>
-
-                {/* Image */}
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <AnimatePresence mode="popLayout">
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              layout
+              key={project.title}
+              className="group relative flex flex-col bg-neutral-900/40 border border-neutral-800 rounded-3xl overflow-hidden hover:border-neutral-700 transition-all duration-300"
+            >
+              {/* IMAGE SECTION WITH HOVER OVERLAY */}
+              <div className="relative h-52 overflow-hidden cursor-pointer">
                 <img
                   src={project.image}
-                  alt={`${project.title} project preview`}
-                  className="aspect-video w-full object-cover"
-                  loading="lazy"
+                  alt={project.title}
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 />
-
-                {/* Content */}
-                <div className="p-5 flex flex-col flex-grow">
-                  <h3 className="text-xl sm:text-2xl font-bold
-                                 bg-gradient-to-r from-purple-300 via-pink-300 to-sky-400
-                                 bg-clip-text text-transparent">
-                    {project.title}
-                  </h3>
-
-                  <p className="mt-3 text-sm sm:text-base text-neutral-400 leading-relaxed">
-                    {isExpanded
-                      ? project.description
-                      : project.description.length > 140
-                      ? project.description.slice(0, 140) + "…"
-                      : project.description}
-                  </p>
-
-                  {/* Tech Stack */}
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.technologies.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="rounded-full bg-purple-800/20
-                                   px-3 py-1 text-xs sm:text-sm
-                                   font-medium text-purple-300"
-                        title={tech}
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                
+                {/* Deployed Link Overlay - Appears on Hover */}
+                <a 
+                  href={project.link || "#"} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]"
+                >
+                  <div className="bg-white text-black px-4 py-2 rounded-full flex items-center gap-2 font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    Live Preview <FiExternalLink />
                   </div>
+                </a>
 
-                  {/* Expanded Content */}
-                  {isExpanded && (
-                    <div className="mt-4 space-y-3">
-                      {project.keyFeatures?.length > 0 && (
-                        <div>
-                          <p className="text-sm font-semibold text-purple-400">
-                            Key Features
-                          </p>
-                          <ul className="list-disc list-inside text-sm text-neutral-400">
-                            {project.keyFeatures.map((f, i) => (
-                              <li key={i}>{f}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      {project.learnings?.length > 0 && (
-                        <div>
-                          <p className="text-sm font-semibold text-purple-400">
-                            Learnings
-                          </p>
-                          <ul className="list-disc list-inside text-sm text-neutral-400">
-                            {project.learnings.map((l, i) => (
-                              <li key={i}>{l}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
-                  )}
-
-                  {/* Toggle */}
-                  {project.description.length > 140 && (
-                    <button
-                      onClick={() => toggleExpand(index)}
-                      className="mt-4 text-sm font-medium text-purple-400
-                                 hover:text-purple-300 self-start"
-                    >
-                      {isExpanded ? "Show less ▲" : "Show more ▼"}
-                    </button>
-                  )}
+                {/* GitHub Icon (Top Right) */}
+                <div className="absolute top-3 right-3 z-20">
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    className="p-2 bg-neutral-900/80 backdrop-blur-md rounded-full text-white hover:text-purple-400 transition-colors block"
+                  >
+                    <FiGithub size={18} />
+                  </a>
                 </div>
-              </motion.article>
-            );
-          })}
+              </div>
 
-          {/* Empty */}
+              {/* CARD CONTENT */}
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                  {project.title}
+                </h3>
+                
+                <p className="text-neutral-400 text-sm line-clamp-2 mb-4">
+                  {project.description}
+                </p>
+
+                {/* Tech Badges */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.slice(0, 3).map((tech) => (
+                    <span key={tech} className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded-md bg-neutral-800 text-neutral-300 border border-neutral-700">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Toggle Button */}
+                <button
+                  onClick={() => toggleExpand(index)}
+                  className="flex items-center gap-2 text-sm font-semibold text-purple-400 hover:text-purple-300 transition-colors mt-auto"
+                >
+                  {expandedIndex === index ? <><FiChevronUp /> Show Less</> : <><FiChevronDown /> Details</>}
+                </button>
+
+                {/* Expanded Content (Same logic as before) */}
+                <AnimatePresence>
+                  {expandedIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden mt-4 pt-4 border-t border-neutral-800"
+                    >
+                      <ul className="text-sm text-neutral-400 space-y-1">
+                        {project.keyFeatures?.map((f, i) => <li key={i}>• {f}</li>)}
+                      </ul>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </div>
+
+          {/* Empty State */}
           {filteredProjects.length === 0 && (
-            <p className="col-span-full text-center text-neutral-500 font-medium">
-              No projects found. Try a different keyword.
-            </p>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-20">
+              <p className="text-neutral-500 text-xl font-medium">No projects match your search.</p>
+            </motion.div>
           )}
         </div>
       </section>

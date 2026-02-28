@@ -23,7 +23,7 @@ export const HERO_CONTENT = `Full Stack Software Engineer with hands-on experien
 
 export const EXPERIENCES = [
   {
-    Duration: "Aug 2025 – Jan 2026",
+    Duration: "Aug 2025 – Mar 2026",
     role: "Full Stack Web Developer Intern",
     company: "Square Education Pvt. Ltd.",
     description:
@@ -96,6 +96,7 @@ export const PROJECTS = [
   title: "Invoicer v1 – Invoice & Finance Management Platform (Under Development)",
   image: project13, 
   github: "https://github.com/Nevin100/Invoicer-v1",
+  link: "https://invoicer.nevinbali.me/",
   description:
     "Invoicer v1 is a modern, full-stack invoice and finance management platform designed for freelancers and small businesses to manage invoices, expenses, payments, clients, and financial analytics from a single, responsive dashboard. The system is currently ~80–85% complete and under active development."
       .padEnd(140, " "),
@@ -133,6 +134,7 @@ export const PROJECTS = [
     title: "InteliMail – AI Cold Email Generator",
     image: project12,
     github: "https://github.com/Nevin100/InteliMail-AI-Cold-Email-Generator",
+    link:"https://intelimail.nevinbali.me/",
     description:
       "InteliMail is a lightweight AI-powered web tool that helps users generate formal, personalized cold emails instantly using the Groq LLM model.".padEnd(
         140,
@@ -161,6 +163,7 @@ export const PROJECTS = [
     title: " NewsMail – AI-Integrated Newsletter Platform",
     image: project11,
     github: "https://github.com/Nevin100/NewsMail",
+    link:"https://newsmail.nevinbali.me/",
     description:
       "NewsMail is a powerful MERN stack newsletter platform that allows scraping news articles, managing subscribers, and sending bulk emails with AI-enhanced summaries.".padEnd(
         140,
@@ -192,6 +195,7 @@ export const PROJECTS = [
     title: " HireWire – AI-Powered Interview Preparation Tool",
     image: project1,
     github: "https://github.com/Nevin100/HireWire",
+    link:"https://hirewire.nevinbali.me/",
     description:
       "HireWire is an AI-powered interview prep tool that generates tailored technical questions based on your role and experience using Groq API.".padEnd(
         140,
@@ -219,6 +223,7 @@ export const PROJECTS = [
     title: " PagePulse – E-Commerce Bookstore",
     image: project2,
     github: "https://github.com/Nevin100/PagePulse",
+    link:"https://pagepulse.nevinbali.me/",
     description:
       "PagePulse is a full-stack bookstore with user authentication, product management, and admin dashboard secured by Firebase and JWT.".padEnd(
         140,
@@ -245,6 +250,7 @@ export const PROJECTS = [
     title: " Sociopedia – MERN Social Media App",
     image: project3,
     github: "https://github.com/Nevin100/Sociopedia",
+    link:"#",
     description:
       "Sociopedia is a MERN social platform with real-time posts, likes, comments, friends, and profile management features.".padEnd(
         140,
@@ -272,6 +278,7 @@ export const PROJECTS = [
     title: "Notify – Cloud Notes App",
     image: project5,
     github: "https://github.com/Nevin100/Notify",
+    link:"https://notify.nevinbali.me/",
     description:
       "Notify is a minimalist notes app supporting CRUD, tagging, pinning, search, and secure JWT-based user authentication.".padEnd(
         140,
@@ -299,6 +306,7 @@ export const PROJECTS = [
     title: "Restaura – Restaurant Showcase Website",
     image: project6,
     github: "https://github.com/Nevin100/Restaura",
+    link:"https://stately-sfogliatella-4529b5.netlify.app/",
     description:
       "Restaura is a responsive restaurant website featuring animations, menus, and highlights with clean UI/UX using React and Tailwind.".padEnd(
         140,
@@ -318,6 +326,7 @@ export const PROJECTS = [
     title: "Plantventory — Track Your Greens Like a Pro ",
     image: project8,
     github: "https://github.com/Nevin100/Plantventory",
+    link:"#",
     description:
       `Welcome to Plantventory, your personal jungle journal! A full-stack, modern-as-heck plant inventory app built with Next.js, TypeScript, Prisma, Neon (PostgreSQL), Stack Auth, and UploadThing. Curate, care for, and celebrate your favorite medicinal herbs, houseplants, and garden greens — all in one smooth digital space. 🌼🧪🌾`.padEnd(
         140,
@@ -345,6 +354,7 @@ export const PROJECTS = [
     title: "Baatein – Real-Time Chat App",
     image: project4,
     github: "https://github.com/Nevin100/Baatein",
+    link:"https://baatein-7epj.onrender.com/",
     description:
       "Baatein is a MERN chat app with real-time messaging via Socket.io, dynamic themes, and secure authentication using JWT.".padEnd(
         140,
@@ -375,6 +385,7 @@ export const PROJECTS = [
     title: "SPARK – Bridging the Gap Between Campus & Code!",
     image: project9,
     github: "https://github.com/Nevin100/S.P.A.R.K",
+    link:"#",
     description:
       `A revolutionary platform for students, societies, sponsors, and curious minds in tech. SPARK bridges skill gaps by connecting academia, industry, and hackathons to build job-ready developers.`.padEnd(
         140,
@@ -403,6 +414,7 @@ export const PROJECTS = [
     title: "ReactIn3D – 3D Spline Integration ",
     image: project10,
     github: "https://github.com/Nevin100/ReactIn3D",
+    link:"https://react-in3-d.vercel.app/",
     description:
       `ReactIn3D is a futuristic 3D email platform for developers. Built with React.js, Tailwind CSS, and Spline, it redefines frontend presentation with stunning visuals.`.padEnd(
         140,
@@ -427,6 +439,7 @@ export const PROJECTS = [
     title: "HR Analytics Dashboard",
     image: project61,
     github: "#",
+    link:"#",
     description:
       "A Power BI dashboard analyzing employee attrition by demographics to identify HR trends and provide actionable insights.".padEnd(
         140,
@@ -446,6 +459,7 @@ export const PROJECTS = [
     title: "Firm Financial Dashboard",
     image: project7,
     github: "#",
+    link:"#",
     description:
       "Power BI dashboard visualizing savings, investments, and revenues to deliver comprehensive financial insights to decision-makers.".padEnd(
         140,
