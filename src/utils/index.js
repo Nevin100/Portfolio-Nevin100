@@ -27,16 +27,13 @@ export const EXPERIENCES = [
     role: "Full Stack Web Developer Intern",
     company: "Square Education Pvt. Ltd.",
     description:
-      "Owning and developing the company’s primary production MVP, HopOnCareer.com, as a full-stack engineer. Building scalable, secure, and high-performance web applications using modern frontend, backend, and cloud-native technologies in a real production environment.",
+      "Owning and developing the company’s primary production MVP as a full-stack engineer. Building scalable, secure, and high-performance web applications using modern frontend, backend, and cloud-native technologies in a real production environment.",
     technologies: [
       "Next.js",
       "TypeScript",
       "FastAPI",
-      "PostgreSQL (Cloud SQL)",
+      "PostgreSQL",
       "Docker",
-      "Firebase Authentication",
-      "JWT Authentication",
-      "Google Cloud Platform",
     ],
     Tasks:
       "Led end-to-end development of the production codebase, including frontend architecture, backend APIs, authentication flows, and database design. Integrated PayU payment gateway, implemented JWT-based admin dashboards, and managed cloud deployment, infrastructure, and live user data in a remote, production setting.",
