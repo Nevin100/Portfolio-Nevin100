@@ -15,6 +15,7 @@ import {
   FaCheckCircle,
   FaTimesCircle,
 } from "react-icons/fa";
+import {Helmet} from "react-helmet-async";
 
 const EMAILJS_SERVICE_ID = "service_nosk5as";   
 const EMAILJS_TEMPLATE_ID = "template_aeuohlj"; 
@@ -58,7 +59,7 @@ const INITIAL_ERRORS = {
 export default function Contact() {
   const [form, setForm] = useState(INITIAL_FORM);
   const [errors, setErrors] = useState(INITIAL_ERRORS);
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [status, setStatus] = useState("idle");
   const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
   const cardRef = useRef(null);
 
@@ -141,7 +142,13 @@ export default function Contact() {
   };
 
   return (
-    <section className="relative w-full py-24 px-4 md:px-8 lg:px-2 bg-transparent min-h-[800px]">
+    <>
+      <Helmet>
+            <title>Experience | Nevin Bali – Full Stack & GenAI Engineer</title>
+            <meta name="description" content="Professional experience of Nevin Bali." />
+          </Helmet>
+
+          <section className="relative w-full py-24 px-4 md:px-8 lg:px-2 bg-transparent min-h-[800px]">
       {/* Subtle ambient blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-16 left-8 w-72 h-72 rounded-full bg-purple-500/5 blur-3xl" />
@@ -323,7 +330,8 @@ export default function Contact() {
           <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-pink-400/40 to-transparent" />
         </div>
       </div>
-    </section>
+    </section>    
+    </>
   );
 }
 
