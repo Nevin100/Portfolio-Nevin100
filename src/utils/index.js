@@ -18,6 +18,9 @@ import image2 from "../assets/Open/image-2.jpg";
 import image3 from "../assets/Open/image-3.jpg";
 import image4 from "../assets/Open/image-4.jpg";
 import image5 from "../assets/Open/image-5.jpg";
+
+import depInspectorImg from "../assets/dep-inspector.jpg";
+
 export const HERO_CONTENT = `Full Stack Software Engineer with hands-on experience building scalable, production-ready web applications using modern JavaScript frameworks and cloud-native tools. I specialize in React, Next.js, TypeScript, and Tailwind CSS on the frontend, and Node.js, Express, MongoDB, PostgreSQL, and FastAPI on the backend. I have worked on real-world MVPs involving secure authentication, REST APIs, third-party integrations, and data-driven dashboards, while actively exploring GenAI, Cloud, and DevOps workflows to deliver reliable, high-performance systems.`;
 
 
@@ -89,6 +92,38 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+  {
+    title: "dep-inspector-cli – Node.js Dependency Analysis CLI",
+    image: depInspectorImg,
+    github: "https://github.com/Nevin100/Dep-inspector-nevin",
+    link: "https://www.npmjs.com/package/dep-inspector-cli",
+    description:
+      "An open-source CLI tool published on npm that goes beyond npm audit — traces the exact dependency chain that pulled in a vulnerability, with optional AI-powered insights via Groq."
+        .padEnd(140, " "),
+    technologies: [
+      "TypeScript",
+      "Node.js",
+      "Commander.js",
+      "LangChain",
+      "Groq API",
+      "Chalk",
+      "Semver",
+    ],
+    keyFeatures: [
+      "Traces full chain: root → pkg → sub-pkg → vulnerable-dep",
+      "Vulnerability scan with severity levels and version delta",
+      "Visual dependency tree with outdated version highlights",
+      "Optional AI analysis via Groq (--ai flag)",
+      "JSON output for CI/CD pipeline integration",
+      "240+ weekly downloads on npm",
+    ],
+    learnings: [
+      "Published and maintained a production npm package",
+      "Built a TypeScript CLI with Commander.js and Chalk",
+      "Integrated LangChain + Groq for AI-powered dependency insights",
+      "Designed machine-readable JSON output for CI/CD pipelines",
+    ],
+  },
   {
   title: "Invoicer v1 – Invoice & Finance Management Platform (Under Development)",
   image: project13, 
@@ -475,6 +510,23 @@ export const PROJECTS = [
 ];
 
 export const OpenSourceContributionsData = [
+  {
+    image: depInspectorImg, 
+    role: "Author & Maintainer",
+    company: "dep-inspector-cli (npm)",
+    repo: "https://github.com/Nevin100/Dep-inspector-nevin",
+    description:
+      "Built and published an open-source CLI tool on npm for analyzing Node.js project dependencies. Traces the exact dependency chain that pulled in a vulnerable package, with AI-powered insights via Groq, JSON output for CI/CD pipelines, and 240+ weekly downloads.",
+    technologies: [
+      "TypeScript",
+      "Node.js",
+      "Commander.js",
+      "LangChain",
+      "Groq API",
+      "npm Registry",
+    ],
+    link: "https://www.npmjs.com/package/dep-inspector-cli",
+  },
   {
     image: image4,
     role: "Frontend Developer",

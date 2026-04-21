@@ -4,7 +4,7 @@ import { FaBars, FaTimes, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/f
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navItems = ["About", "Technologies", "Experience", "Activities", "Projects"];
+const navItems = ["About", "Technologies", "Experience", "Activities", "Projects", "Contacts"];
 
 const socialIcons = [
   { href: "https://www.linkedin.com/in/nevinbali1012/", label: "LinkedIn", icon: <FaLinkedin />, color: "hover:text-blue-400" },

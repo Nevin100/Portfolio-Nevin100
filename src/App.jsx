@@ -10,6 +10,7 @@ const Technologies = lazy(() => import("./components/Technologies.jsx"));
 const Experience = lazy(() => import("./components/Experience.jsx"));
 const Projects = lazy(() => import("./components/Projects.jsx"));
 const Activities = lazy(() => import("./components/Activities.jsx"));
+const Contact = lazy(() => import("./components/Contacts.jsx"));
 
 const App = () => {
   const [showLoader, setShowLoader] = useState(true);
@@ -42,6 +43,8 @@ const App = () => {
               <Route path="/experience" element={<Experience />} />
               <Route path="/activities" element={<Activities />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="*" element={<Hero />} />
+              <Route path="/contacts" element={<Contact />} />
             </Routes>
           </Suspense>
         </div>
