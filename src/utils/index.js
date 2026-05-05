@@ -125,12 +125,12 @@ export const PROJECTS = [
     ],
   },
   {
-  title: "Invoicer v1 – Invoice & Finance Management Platform (Under Development)",
+  title: "Invoicer v1 – Invoice & Finance Management Platform ",
   image: project13, 
   github: "https://github.com/Nevin100/Invoicer-v1",
   link: "https://invoicer.nevinbali.me/",
   description:
-    "Invoicer v1 is a modern, full-stack invoice and finance management platform designed for freelancers and small businesses to manage invoices, expenses, payments, clients, and financial analytics from a single, responsive dashboard. The system is currently ~80–85% complete and under active development."
+    "Invoicer v1 is a modern, full-stack invoice and finance management platform designed for freelancers and small businesses to manage invoices, expenses, payments, clients, and financial analytics from a single, responsive platform with additional features like Ai Insights for dedicated Section, Invoice tracking status + Secured Credit Based System." 
       .padEnd(140, " "),
   technologies: [
     "Next.js (App Router)",
@@ -144,6 +144,8 @@ export const PROJECTS = [
     "Redux Toolkit",
     "Razorpay",
     "ExcelJS",
+    "Tavily API",
+    "Groq",
   ],
   keyFeatures: [
     "Invoice lifecycle management with client-linked invoices",
@@ -152,13 +154,17 @@ export const PROJECTS = [
     "Secure online payments using Razorpay integration",
     "Export expenses & financial data to Excel for reporting",
     "Fully responsive dashboard with sidebar navigation",
+    "Ai EValuations and insights for financial data using Tavily APi & Groq with history management",
   ],
   learnings: [
     "Designed and built a monolithic full-stack architecture using Next.js",
-    "Implemented JWT-based authentication with secure API routes",
+    "Implemented Cookie based authentication with secure API routes.",
     "Integrated Razorpay payment flow into invoice lifecycle",
     "Built real-time financial analytics using aggregated MongoDB data",
     "Worked on scalable schema design with Mongoose ODM",
+    "Implemented data export functionality using ExcelJS",
+    "Integrated AI insights using Tavily API and Groq for financial data analysis",
+    "Integrated Docker + CI/CD pipelines for streamlined deployment and development workflows",
   ],
 },
 
