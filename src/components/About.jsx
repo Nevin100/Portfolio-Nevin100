@@ -139,7 +139,7 @@ export default function About() {
 
                 <div className="pt-6">
                   <Link
-                    to="https://drive.google.com/file/d/1b6JlVv2VSWQwjyOtI8-EnSZTB7rQQ0yz/view"
+                    to="https://drive.google.com/file/d/1rOcRvvVAzD3ijvVV9Erhy9030TwhFNzy/view?usp=sharing"
                     target="_blank"
                     className="group flex items-center justify-center gap-3 w-full bg-white text-black py-4 rounded-2xl font-bold transition-all hover:bg-gradient-to-r hover:from-purple-400 hover:to-sky-400 hover:text-white"
                   >
