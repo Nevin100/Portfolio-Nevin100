@@ -41,7 +41,7 @@ function Hero() {
               transition={{ duration: 0.7 }}
               className="text-3xl sm:text-7xl lg:text-8xl font-black tracking-tighter text-white"
             >
-              NEVIN <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-sky-400">BALI</span>
+              NEVIN<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-sky-400"> BALI</span>
             </motion.h1>
 
             <motion.div
