@@ -39,8 +39,8 @@ export default function Technologies({ sections }) {
       items: ["Git/GitHub", "Docker", "Postman", "Thunder Client", "Power BI"],
     },
     {
-      title: "Learning & Working On",
-      items: ["DevOps", "Cloud (GCP, AWS)", "CI/CD", "Scalable Architectures", "Microservices", "Kafka", "MonoRepo Patterns"],
+      title: "Working On",
+      items: ["DevOps", "Cloud (AWS)", "CI/CD", "Scalable Architectures", "Microservices", "Kafka", "MonoRepo Patterns"],
     },
     {
       title: "Authentication & Security",
