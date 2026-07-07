@@ -20,19 +20,19 @@ export default function Technologies({ sections }) {
   const defaultSections = sections || [
     {
       title: "Languages",
-      items: ["JavaScript", "TypeScript", "Python", "Java", "C", "C++", "HTML", "CSS"],
+      items: ["JavaScript", "TypeScript", "Python", "Java", "C", "C++", "HTML", "CSS", "PHP"],
     },
     {
       title: "Frontend",
-      items: ["React.js", "Next.js", "Bootstrap", "Material-UI", "Zustand", "Chakra UI", "Redux Toolkit", "Tailwind CSS", "Framer Motion", "AOS"],
+      items: ["React.js", "Next.js", "Bootstrap", "Zustand", "Redux Toolkit", "Tailwind CSS", "Framer Motion", "ShadCN UI"],
     },
     {
       title: "Backend",
-      items: ["Node.js", "Express.js", "FastAPI", "MongoDB (Mongoose)", "PostgreSQL", "Prisma", "Mongoose ODM", "NestJS (Learning)", "Appwrite", "Supabase Services"],
+      items: ["Node.js", "Express.js", "FastAPI", "SQLAlchemy", "MongoDB", "PostgreSQL", "Prisma", "Mongoose ODM", "NestJS", "Hono.js", "Supabase Services", "REST APIs"],
     },
     {
       title: "Databases",
-      items: ["MongoDB", "PostgreSQL", "Neon", "Supabase", "Firebase", "MySQL", "SQLite"],
+      items: ["MongoDB", "PostgreSQL", "Supabase", "Firebase", "MySQL"],
     },
     {
       title: "Developer Tools & Extras",
