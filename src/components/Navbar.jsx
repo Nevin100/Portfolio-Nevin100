@@ -4,7 +4,7 @@ import { FaBars, FaTimes, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/f
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navItems = ["About", "Technologies", "Experience", "Activities", "Projects", "Contacts"];
+const navItems = ["About", "Technologies", "Experience", "Community", "Projects", "Connect"];
 
 const socialIcons = [
   { href: "https://www.linkedin.com/in/nevinbali1012/", label: "LinkedIn", icon: <FaLinkedin />, color: "hover:text-blue-400" },
@@ -17,7 +17,6 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
 
-  // Scroll detection for the shadow effect
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
@@ -28,16 +27,13 @@ function Navbar() {
     <header className="fixed top-0 inset-x-0 z-[100] px-4 md:px-8 py-5 transition-all duration-300">
       <nav
         className={`mx-auto max-w-7xl flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-500 
-          /* PERMANENT GLASS LOOK */
           bg-neutral-900/40 backdrop-blur-xl border border-white/10 
-          /* DYNAMIC PINK-VIOLET GLOW ON SCROLL */
-          ${scrolled 
-            ? "shadow-[0_10px_30px_-10px_rgba(236,72,153,0.3),0_10px_30px_-10px_rgba(168,85,247,0.3)] border-purple-500/20" 
+          ${scrolled
+            ? "shadow-[0_10px_30px_-10px_rgba(236,72,153,0.3),0_10px_30px_-10px_rgba(168,85,247,0.3)] border-purple-500/20"
             : "shadow-none"
           }`}
         role="navigation"
       >
-        {/* Logo */}
         <Link to="/" className="flex items-center group">
           <motion.img
             whileHover={{ scale: 1.1, rotate: 5 }}
@@ -47,7 +43,6 @@ function Navbar() {
           />
         </Link>
 
-        {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-10">
           <ul className="flex items-center gap-8 text-[13px] font-bold uppercase tracking-[0.15em]">
             {navItems.map((item) => {
@@ -57,15 +52,12 @@ function Navbar() {
                 <li key={item} className="relative">
                   <Link
                     to={path}
-                    className={`transition-colors duration-300 ${
-                      isActive ? "text-purple-400" : "text-neutral-300 hover:text-white"
-                    }`}
+                    className={`transition-colors duration-300 ${isActive ? "text-purple-400" : "text-neutral-300 hover:text-white"}`}
                   >
                     {item}
                   </Link>
-                  {/* Underline for active link */}
                   {isActive && (
-                    <motion.div 
+                    <motion.div
                       layoutId="nav-underline"
                       className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"
                     />
@@ -77,7 +69,6 @@ function Navbar() {
 
           <div className="h-5 w-[1px] bg-white/10 mx-2" />
 
-          {/* Socials */}
           <div className="flex gap-4">
             {socialIcons.map(({ href, label, icon, color }) => (
               <motion.a
@@ -94,7 +85,6 @@ function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Toggle */}
         <motion.button
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsOpen(!isOpen)}
@@ -104,7 +94,6 @@ function Navbar() {
         </motion.button>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -119,9 +108,7 @@ function Navbar() {
                   key={item}
                   to={`/${item.toLowerCase()}`}
                   onClick={() => setIsOpen(false)}
-                  className={`text-lg font-bold uppercase tracking-widest ${
-                    pathname === `/${item.toLowerCase()}` ? "text-purple-400" : "text-neutral-300"
-                  }`}
+                  className={`text-lg font-bold uppercase tracking-widest ${pathname === `/${item.toLowerCase()}` ? "text-purple-400" : "text-neutral-300"}`}
                 >
                   {item}
                 </Link>

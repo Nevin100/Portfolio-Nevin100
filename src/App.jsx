@@ -9,8 +9,8 @@ const About = lazy(() => import("./components/About.jsx"));
 const Technologies = lazy(() => import("./components/Technologies.jsx"));
 const Experience = lazy(() => import("./components/Experience.jsx"));
 const Projects = lazy(() => import("./components/Projects.jsx"));
-const Activities = lazy(() => import("./components/Activities.jsx"));
-const Contact = lazy(() => import("./components/Contacts.jsx"));
+const Community = lazy(() => import("./components/Community.jsx"));
+const Connect = lazy(() => import("./components/Connect.jsx"));
 
 const App = () => {
   const [showLoader, setShowLoader] = useState(true);
@@ -19,7 +19,6 @@ const App = () => {
     const raf = requestAnimationFrame(() => {
       setShowLoader(false);
     });
-
     return () => cancelAnimationFrame(raf);
   }, []);
 
@@ -41,10 +40,14 @@ const App = () => {
               <Route path="/about" element={<About />} />
               <Route path="/technologies" element={<Technologies />} />
               <Route path="/experience" element={<Experience />} />
-              <Route path="/activities" element={<Activities />} />
+              <Route path="/community" element={<Community />} />
+              {/* kept for old bookmarks/links */}
+              <Route path="/activities" element={<Community />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/connect" element={<Connect />} />
+              {/* kept for old bookmarks/links */}
+              <Route path="/contacts" element={<Connect />} />
               <Route path="*" element={<Hero />} />
-              <Route path="/contacts" element={<Contact />} />
             </Routes>
           </Suspense>
         </div>
