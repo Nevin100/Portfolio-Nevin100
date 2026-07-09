@@ -117,30 +117,6 @@ export const PROJECTS = [
     ],
   },
   {
-    title: "dep-inspector-cli – Node.js Dependency Analysis CLI",
-    image: depInspectorImg,
-    github: "https://github.com/Nevin100/Dep-inspector-nevin",
-    link: "https://www.npmjs.com/package/dep-inspector-cli",
-    description:
-      "An open-source CLI tool published on npm that goes beyond npm audit — traces the exact dependency chain that pulled in a vulnerability, with optional AI-powered insights via Groq."
-        .padEnd(140, " "),
-    technologies: ["TypeScript", "Node.js", "Commander.js", "LangChain", "Groq API", "Chalk", "Semver"],
-    keyFeatures: [
-      "Traces full chain: root → pkg → sub-pkg → vulnerable-dep",
-      "Vulnerability scan with severity levels and version delta",
-      "Visual dependency tree with outdated version highlights",
-      "Optional AI analysis via Groq (--ai flag)",
-      "JSON output for CI/CD pipeline integration",
-      "240+ weekly downloads on npm",
-    ],
-    learnings: [
-      "Published and maintained a production npm package",
-      "Built a TypeScript CLI with Commander.js and Chalk",
-      "Integrated LangChain + Groq for AI-powered dependency insights",
-      "Designed machine-readable JSON output for CI/CD pipelines",
-    ],
-  },
-  {
     title: "Invoicer v1 – Invoice & Finance Management Platform",
     image: project13,
     github: "https://github.com/Nevin100/Invoicer-v1",
