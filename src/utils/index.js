@@ -66,30 +66,50 @@ export const EXPERIENCES = [
   },
 ];
 
-// featured:true + featuredTag => shown in the "Featured Work" strip on Projects page.
-// TODO: replace bootcamp github/link placeholders with your real repo/course link.
 export const PROJECTS = [
+  // {
+  //   title: "LangChain & LangGraph Bootcamp — Self-Built Course for Developers",
+  //   image: null,
+  //   github: "https://github.com/Nevin100/YOUR_BOOTCAMP_REPO",
+  //   link: "https://github.com/Nevin100/YOUR_BOOTCAMP_REPO",
+  //   featured: true,
+  //   featuredTag: "Teaching",
+  //   description:
+  //     "A self-designed, ground-up LangChain & LangGraph bootcamp built to teach other developers how to build production-grade GenAI applications — agents, chains, memory, and graph-based orchestration explained through hands-on modules."
+  //       .padEnd(140, " "),
+  //   technologies: ["LangChain", "LangGraph", "Python", "Groq API", "GenAI"],
+  //   keyFeatures: [
+  //     "Structured, module-by-module curriculum from fundamentals to agentic workflows",
+  //     "Hands-on projects covering chains, memory, tools, and LangGraph state machines",
+  //     "Built for other developers to self-learn production GenAI patterns",
+  //     "Continuously updated as LangChain/LangGraph APIs evolve",
+  //   ],
+  //   learnings: [
+  //     "Deepened GenAI application-architecture knowledge by teaching it end-to-end",
+  //     "Designed a beginner-to-advanced curriculum for a fast-moving ecosystem",
+  //     "Practiced technical writing and instructional design for developers",
+  //   ],
+  // },
   {
-    title: "LangChain & LangGraph Bootcamp — Self-Built Course for Developers",
-    image: null,
-    github: "https://github.com/Nevin100/YOUR_BOOTCAMP_REPO",
-    link: "https://github.com/Nevin100/YOUR_BOOTCAMP_REPO",
+    title: "NewsMail – AI-Integrated Newsletter Platform",
+    image: project11,
+    github: "https://github.com/Nevin100/NewsMail",
+    link: "https://newsmail.nevinbali.me/",
     featured: true,
-    featuredTag: "Teaching",
+    featuredTag: "AI-Integrated",
     description:
-      "A self-designed, ground-up LangChain & LangGraph bootcamp built to teach other developers how to build production-grade GenAI applications — agents, chains, memory, and graph-based orchestration explained through hands-on modules."
-        .padEnd(140, " "),
-    technologies: ["LangChain", "LangGraph", "Python", "Groq API", "GenAI"],
+      "NewsMail is a powerful MERN stack newsletter platform that allows scraping news articles, managing subscribers, and sending bulk emails with AI-enhanced summaries.".padEnd(140, " "),
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind", "Nodemailer", "Groq API", "Cheerio"],
     keyFeatures: [
-      "Structured, module-by-module curriculum from fundamentals to agentic workflows",
-      "Hands-on projects covering chains, memory, tools, and LangGraph state machines",
-      "Built for other developers to self-learn production GenAI patterns",
-      "Continuously updated as LangChain/LangGraph APIs evolve",
+      "Scrapes and summarizes news content using Groq API",
+      "Bulk email sending via Nodemailer",
+      "Admin dashboard for newsletter management",
+      "AI integration for custom content generation",
     ],
     learnings: [
-      "Deepened GenAI application-architecture knowledge by teaching it end-to-end",
-      "Designed a beginner-to-advanced curriculum for a fast-moving ecosystem",
-      "Practiced technical writing and instructional design for developers",
+      "Worked with Cheerio for DOM parsing and scraping",
+      "Integrated Groq API for summarizing articles",
+      "Handled newsletter scheduling and bulk mailing",
     ],
   },
   {
