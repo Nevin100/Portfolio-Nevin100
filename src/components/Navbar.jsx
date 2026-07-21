@@ -1,15 +1,44 @@
 import { useState, useEffect } from "react";
 import logo from "../assets/NevinLogo.png";
-import { FaBars, FaTimes, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import {
+  FaBars,
+  FaTimes,
+  FaLinkedin,
+  FaGithub,
+  FaEnvelope,
+} from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeSwitcher from "./ThemeSwitcher";
 
-const navItems = ["About", "Technologies", "Experience", "Community", "Projects", "Connect"];
+const navItems = [
+  "About",
+  "Technologies",
+  "Experience",
+  "Community",
+  "Projects",
+  "Connect",
+];
 
 const socialIcons = [
-  { href: "https://www.linkedin.com/in/nevinbali1012/", label: "LinkedIn", icon: <FaLinkedin />, color: "hover:text-blue-400" },
-  { href: "https://github.com/Nevin100", label: "GitHub", icon: <FaGithub />, color: "hover:text-gray-300" },
-  { href: "mailto:nevinbali10@mail.com", label: "Email", icon: <FaEnvelope />, color: "hover:text-red-400" },
+  {
+    href: "https://www.linkedin.com/in/nevinbali1012/",
+    label: "LinkedIn",
+    icon: <FaLinkedin />,
+    color: "hover:text-blue-400",
+  },
+  {
+    href: "https://github.com/Nevin100",
+    label: "GitHub",
+    icon: <FaGithub />,
+    color: "hover:text-gray-300",
+  },
+  {
+    href: "mailto:nevinbali10@mail.com",
+    label: "Email",
+    icon: <FaEnvelope />,
+    color: "hover:text-red-400",
+  },
 ];
 
 function Navbar() {
@@ -28,9 +57,10 @@ function Navbar() {
       <nav
         className={`mx-auto max-w-7xl flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-500 
           bg-neutral-900/40 backdrop-blur-xl border border-white/10 
-          ${scrolled
-            ? "shadow-[0_10px_30px_-10px_rgba(236,72,153,0.3),0_10px_30px_-10px_rgba(168,85,247,0.3)] border-purple-500/20"
-            : "shadow-none"
+          ${
+            scrolled
+              ? "shadow-[0_10px_30px_-10px_rgba(236,72,153,0.3),0_10px_30px_-10px_rgba(168,85,247,0.3)] border-purple-500/20"
+              : "shadow-none"
           }`}
         role="navigation"
       >
@@ -68,7 +98,7 @@ function Navbar() {
           </ul>
 
           <div className="h-5 w-[1px] bg-white/10 mx-2" />
-
+          <ThemeSwitcher />
           <div className="flex gap-4">
             {socialIcons.map(({ href, label, icon, color }) => (
               <motion.a
@@ -115,8 +145,13 @@ function Navbar() {
               ))}
               <div className="flex gap-8 text-2xl mt-4">
                 {socialIcons.map(({ href, label, icon, color }) => (
-                  <a key={label} href={href} className={color}>{icon}</a>
+                  <a key={label} href={href} className={color}>
+                    {icon}
+                  </a>
                 ))}
+              </div>
+              <div className="mt-2">
+                <ThemeSwitcher />
               </div>
             </div>
           </motion.div>

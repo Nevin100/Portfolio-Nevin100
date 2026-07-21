@@ -3,6 +3,7 @@ import { useEffect, useState, lazy, Suspense } from "react";
 
 import Navbar from "./components/Navbar.jsx";
 import Loader from "./utils/Loader.jsx";
+import useThemeStore from "./store/useThemeStore.js";
 
 const Hero = lazy(() => import("./components/Hero.jsx"));
 const About = lazy(() => import("./components/About.jsx"));
@@ -13,6 +14,7 @@ const Community = lazy(() => import("./components/Community.jsx"));
 const Connect = lazy(() => import("./components/Connect.jsx"));
 
 const App = () => {
+  const { theme } = useThemeStore();
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
@@ -26,7 +28,7 @@ const App = () => {
     <Router>
       {showLoader && <Loader />}
 
-      <div className="text-neutral-300 overflow-x-hidden antialiased scroll-smooth min-h-screen">
+      <div   data-theme={theme} className="text-neutral-300 overflow-x-hidden antialiased scroll-smooth min-h-screen">
         <div className="fixed top-0 -z-10 h-full w-full">
           <div className="absolute inset-0 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
         </div>
