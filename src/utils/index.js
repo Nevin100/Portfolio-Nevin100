@@ -407,7 +407,7 @@ export const OpenSourceContributionsData = [
     description:
       "Led frontend development and moderated participant workflows for a global-level hackathon. Built dynamic event modules and onboarding flows to streamline registrations and participation, while ensuring a seamless and accessible user experience throughout the event lifecycle.",
     technologies: ["React.js", "Tailwind CSS", "User Experience Design", "Event Systems"],
-    link: "https://pearshack.geekroom.in/",
+    link: "https://pears-hackathon.vercel.app/",
   },
   {
     image: image3,
@@ -417,7 +417,7 @@ export const OpenSourceContributionsData = [
     description:
       "Designed and developed a fully responsive hackathon website during active participation at MUJ Hackathon. Delivered performance-optimized UI components using React and TypeScript under strict deadlines, focusing on cross-device compatibility and clean frontend architecture.",
     technologies: ["React.js", "TypeScript", "Tailwind CSS", "Responsive Web Design", "Performance Optimization"],
-    link: "https://codemanipal.geekroom.in/#/",
+    link: "#",
   },
   {
     image: image2,
@@ -437,7 +437,7 @@ export const OpenSourceContributionsData = [
     description:
       "Led and supervised the frontend development team for the official GDGOC website. Oversaw UI architecture, animation workflows, and module-level execution using React, Tailwind CSS, and Framer Motion. Played a key role in coordinating team deliverables and maintaining high-quality engineering standards for Google-backed community initiatives.",
     technologies: ["React.js", "Framer Motion", "Tailwind CSS", "Team Leadership", "Frontend Supervision"],
-    link: "https://www.gdgmsit.in/",
+    link: "#",
   },
 ];
 

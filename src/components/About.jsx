@@ -8,12 +8,11 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-// TODO: replace YOUR_USERNAME placeholders with your real handles/stats
 const PROOF_STATS = [
   { label: "GitHub", value: "@Nevin100", Icon: FaGithub, color: "text-zinc-300" },
   { label: "LeetCode", value: "50-Day Streak", Icon: SiLeetcode, color: "text-orange-400" },
-  { label: "HackerRank", value: "@YOUR_USERNAME", Icon: SiHackerrank, color: "text-emerald-400" },
-  { label: "NeetCode", value: "@YOUR_USERNAME", Icon: Code2, color: "text-yellow-400" },
+  { label: "HackerRank", value: "@opopopopop100000", Icon: SiHackerrank, color: "text-emerald-400" },
+  { label: "LeetCode", value: "@Nevin_100", Icon: SiLeetcode, color: "text-yellow-400" },
 ];
 
 export default function About() {
@@ -106,8 +105,19 @@ export default function About() {
                   My recent obsession? <strong className="text-sky-400">GenAI</strong>. I&apos;ve been shipping products powered by
                   <strong> Groq (Llama v3)</strong>, bridging the gap between raw LLM capabilities and practical, automated tools for modern businesses.
                 </p>
-              </div>
 
+                <div className="pt-2">
+                  <Link
+                    to="https://drive.google.com/file/d/1rOcRvvVAzD3ijvVV9Erhy9030TwhFNzy/view?usp=sharing"
+                    target="_blank"
+                    className="group flex items-center justify-center gap-3 w-full bg-white text-black py-4 rounded-2xl font-bold transition-all hover:bg-gradient-to-r hover:from-purple-400 hover:to-violet-400 hover:text-white"
+                  >
+                    View Full Resume
+                    <ExternalLink size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+              
               {/* Side Stats/Cards */}
               <div className="space-y-6">
                 <motion.div
@@ -156,7 +166,7 @@ export default function About() {
                       <p className="text-zinc-400 text-sm mt-1">Consistency across code &amp; practice</p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 gap-3">
                     {PROOF_STATS.map(({ label, value, Icon, color }) => (
                       <div key={label} className="flex items-center gap-2 px-3 py-2 rounded-xl bg-zinc-950/40 border border-white/5">
                         <Icon className={`text-lg shrink-0 ${color}`} />
@@ -168,17 +178,6 @@ export default function About() {
                     ))}
                   </div>
                 </motion.div>
-
-                <div className="pt-2">
-                  <Link
-                    to="https://drive.google.com/file/d/1rOcRvvVAzD3ijvVV9Erhy9030TwhFNzy/view?usp=sharing"
-                    target="_blank"
-                    className="group flex items-center justify-center gap-3 w-full bg-white text-black py-4 rounded-2xl font-bold transition-all hover:bg-gradient-to-r hover:from-purple-400 hover:to-sky-400 hover:text-white"
-                  >
-                    View Full Resume
-                    <ExternalLink size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </Link>
-                </div>
               </div>
             </div>
           </motion.div>
