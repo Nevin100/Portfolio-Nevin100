@@ -1,5 +1,4 @@
 import { HERO_CONTENT } from "../utils";
-import profilePIC from "../assets/NevinProfile.jpg";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
@@ -75,14 +74,14 @@ function Hero() {
 
             <div className="relative group">
               <img
-                src={profilePIC}
+                src={"https://github.com/Nevin100.png"}
                 alt="Nevin Bali Profile"
                 className="w-72 sm:w-84 md:w-96 lg:w-[30rem] rounded-[3rem] object-cover border-2 border-base-content/5 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
                 loading="eager"
               />
               {/* Floating Badge */}
               <div className="absolute -bottom-6 -left-6 lg:-left-12 p-6 bg-base-200/80 backdrop-blur-xl border border-base-content/10 rounded-3xl hidden sm:block shadow-2xl">
-                <div className="text-3xl font-black text-base-content">2+</div>
+                <div className="text-3xl font-black text-base-content">1+</div>
                 <div className="text-base-content/50 text-xs font-bold uppercase tracking-widest">Years Experience</div>
               </div>
             </div>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import logo from "../assets/NevinLogo.png";
 import {
   FaBars,
   FaTimes,
@@ -10,6 +9,8 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeSwitcher from "./ThemeSwitcher";
+
+const terminalWords = ["Code", "Build", "Ship", "Scale", "Deploy", "Engineer"];
 
 const navItems = [
   "About",
@@ -31,7 +32,7 @@ const socialIcons = [
     href: "https://github.com/Nevin100",
     label: "GitHub",
     icon: <FaGithub />,
-    color: "hover:text-gray-300",
+    color: "hover:text-base-content",
   },
   {
     href: "mailto:nevinbali10@mail.com",
@@ -42,6 +43,7 @@ const socialIcons = [
 ];
 
 function Navbar() {
+  const [index, setIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
@@ -52,25 +54,60 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % terminalWords.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <header className="fixed top-0 inset-x-0 z-[100] px-4 md:px-8 py-5 transition-all duration-300">
       <nav
         className={`mx-auto max-w-7xl flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-500 
-          bg-neutral-900/40 backdrop-blur-xl border border-white/10 
+          bg-base-200/40 backdrop-blur-xl border border-base-content/10 
           ${
             scrolled
-              ? "shadow-[0_10px_30px_-10px_rgba(236,72,153,0.3),0_10px_30px_-10px_rgba(168,85,247,0.3)] border-purple-500/20"
+              ? "shadow-[0_10px_30px_-10px_hsl(var(--s)/0.3),0_10px_30px_-10px_hsl(var(--p)/0.3)] border-primary/20"
               : "shadow-none"
           }`}
         role="navigation"
       >
-        <Link to="/" className="flex items-center group">
-          <motion.img
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            src={logo}
-            alt="Nevin Logo"
-            className="w-10 md:w-12 drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]"
-          />
+        <Link to="/" className="group flex items-center">
+          <div className="leading-none">
+            <div className="flex items-center text-xl md:text-2xl font-black italic font-mono">
+              <span className="text-primary">@</span>
+
+              <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                NevinBali
+              </span>
+
+              <motion.span
+                animate={{ opacity: [1, 0, 1] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 1,
+                }}
+                className="text-primary text-2xl md:text-3xl italic font-mono ml-1"
+              >
+                _
+              </motion.span>
+            </div>
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={terminalWords[index]}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.35 }}
+                className="text-[10px] md:text-md uppercase tracking-[0.35em] text-base-300 font-bold ml-1 mt-1"
+              >
+                {terminalWords[index]}
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </Link>
 
         <div className="hidden lg:flex items-center gap-10">
@@ -82,14 +119,14 @@ function Navbar() {
                 <li key={item} className="relative">
                   <Link
                     to={path}
-                    className={`transition-colors duration-300 ${isActive ? "text-purple-400" : "text-neutral-300 hover:text-white"}`}
+                    className={`transition-colors duration-300 ${isActive ? "text-primary" : "text-base-content/70 hover:text-base-content"}`}
                   >
                     {item}
                   </Link>
                   {isActive && (
                     <motion.div
                       layoutId="nav-underline"
-                      className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"
+                      className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-secondary rounded-full"
                     />
                   )}
                 </li>
@@ -97,7 +134,7 @@ function Navbar() {
             })}
           </ul>
 
-          <div className="h-5 w-[1px] bg-white/10 mx-2" />
+          <div className="h-5 w-[1px] bg-base-content/10 mx-2" />
           <ThemeSwitcher />
           <div className="flex gap-4">
             {socialIcons.map(({ href, label, icon, color }) => (
@@ -107,7 +144,7 @@ function Navbar() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-xl text-neutral-400 transition-colors ${color}`}
+                className={`text-xl text-base-content/60 transition-colors ${color}`}
               >
                 {icon}
               </motion.a>
@@ -118,7 +155,7 @@ function Navbar() {
         <motion.button
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden p-2 text-2xl text-purple-400"
+          className="lg:hidden p-2 text-2xl text-primary"
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </motion.button>
@@ -130,7 +167,7 @@ function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden absolute inset-x-4 mt-3 p-8 bg-neutral-950/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl"
+            className="lg:hidden absolute inset-x-4 mt-3 p-8 bg-base-100/95 backdrop-blur-2xl border border-base-content/10 rounded-2xl shadow-2xl"
           >
             <div className="flex flex-col items-center gap-6">
               {navItems.map((item) => (
@@ -138,7 +175,7 @@ function Navbar() {
                   key={item}
                   to={`/${item.toLowerCase()}`}
                   onClick={() => setIsOpen(false)}
-                  className={`text-lg font-bold uppercase tracking-widest ${pathname === `/${item.toLowerCase()}` ? "text-purple-400" : "text-neutral-300"}`}
+                  className={`text-lg font-bold uppercase tracking-widest ${pathname === `/${item.toLowerCase()}` ? "text-primary" : "text-base-content/70"}`}
                 >
                   {item}
                 </Link>
