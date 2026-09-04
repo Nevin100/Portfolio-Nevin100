@@ -18,7 +18,7 @@ function ProjectCard({ project, index, expandedIndex, toggleExpand, big }) {
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 via-accent/10 to-secondary/20">
@@ -56,15 +56,15 @@ function ProjectCard({ project, index, expandedIndex, toggleExpand, big }) {
       </div>
 
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className={`${big ? "text-2xl" : "text-xl"} font-bold text-base-content mb-2 group-hover:text-primary transition-colors`}>
+        <h3 className={`${big ? "text-3xl" : "text-xl"} font-bold text-base-content mb-2 group-hover:text-primary transition-colors`}>
           {project.title}
         </h3>
 
-        <p className="text-base-content/60 text-sm line-clamp-2 mb-4">{project.description}</p>
+        <p className="text-base-content/60 text-md md:text-lg line-clamp-2 mb-4">{project.description}</p>
 
         <div className="flex flex-wrap gap-2 mb-6">
-          {project.technologies.slice(0, 3).map((tech) => (
-            <span key={tech} className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded-md bg-base-300 text-base-content/70 border border-base-content/10">
+          {project.technologies.slice(0, 8).map((tech) => (
+            <span key={tech} className="md:text-[13px] text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded-md bg-base-300 text-base-content/70 border border-base-content/10">
               {tech}
             </span>
           ))}
@@ -85,7 +85,7 @@ function ProjectCard({ project, index, expandedIndex, toggleExpand, big }) {
               exit={{ height: 0, opacity: 0 }}
               className="overflow-hidden mt-4 pt-4 border-t border-base-content/10"
             >
-              <ul className="text-sm text-base-content/60 space-y-1">
+              <ul className="text-md md:text-lg text-base-content/60 space-y-1">
                 {project.keyFeatures?.map((f, i) => <li key={i}>• {f}</li>)}
               </ul>
             </motion.div>
@@ -174,7 +174,7 @@ function Projects() {
                 <span className="w-1.5 h-6 bg-primary rounded-full" />
                 <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-base-content/60">Featured Work</h3>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+              <div className="grid grid-cols-1 gap-8 mb-20">
                 {featured.map((project) => {
                   const globalIndex = PROJECTS.indexOf(project);
                   return (
@@ -188,7 +188,7 @@ function Projects() {
                 <span className="w-1.5 h-6 bg-secondary rounded-full" />
                 <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-base-content/60">More Projects</h3>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {rest.map((project) => {
                   const globalIndex = PROJECTS.indexOf(project);
                   return (
