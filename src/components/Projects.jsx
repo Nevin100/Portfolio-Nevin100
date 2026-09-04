@@ -137,7 +137,7 @@ function Projects() {
               MY <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">PROJECTS</span>
             </motion.h2>
 
-            <div className="relative max-w-md mx-auto group">
+            <div className="relative max-w-md md:max-w-2xl mx-auto group">
               <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-base-content/50 group-focus-within:text-primary transition-colors" />
               <input
                 type="text"
