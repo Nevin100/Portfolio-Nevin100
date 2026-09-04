@@ -340,8 +340,6 @@ export const PROJECTS = [
     image: project11,
     github: "https://github.com/Nevin100/NewsMail",
     link: "https://newsmail.nevinbali.me/",
-    featured: true,
-    featuredTag: "AI-Integrated",
     description:
       "Production newsletter platform on AWS ECS Fargate with ECR, ALB path-based routing, Cloudflare WAF, Groq-powered AI content generation, and bulk email dispatch via Resend — achieving 99.9% uptime.".padEnd(
         140,

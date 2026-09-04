@@ -174,7 +174,7 @@ function Projects() {
                 <span className="w-1.5 h-6 bg-primary rounded-full" />
                 <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-base-content/60">Featured Work</h3>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
                 {featured.map((project) => {
                   const globalIndex = PROJECTS.indexOf(project);
                   return (
