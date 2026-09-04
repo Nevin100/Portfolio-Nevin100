@@ -10,7 +10,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 const PROOF_STATS = [
   { label: "GitHub", value: "@Nevin100", Icon: FaGithub, color: "text-base-content/70" },
-  { label: "LeetCode", value: "50-Day Streak", Icon: SiLeetcode, color: "text-orange-400" },
+  { label: "LeetCode", value: "120-Day+ Streak", Icon: SiLeetcode, color: "text-orange-400" },
   { label: "HackerRank", value: "@opopopopop100000", Icon: SiHackerrank, color: "text-emerald-400" },
   { label: "LeetCode", value: "@Nevin_100", Icon: SiLeetcode, color: "text-yellow-400" },
 ];
@@ -37,8 +37,8 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>About | Nevin Bali – Full Stack & GenAI Engineer</title>
-        <meta name="description" content="Nevin Bali is a Full Stack Software Engineer specializing in Next.js, GenAI, and cloud architectures." />
+        <title>About | Nevin Bali – Full Stack SDE & AI Systems Builder</title>
+<meta name="description" content="Nevin Bali is a Full Stack SDE with 2 production internships, a self-built SaaS, and experience building LangGraph agents, DevOps pipelines, and compliance intelligence systems." />
       </Helmet>
 
       <section
@@ -94,23 +94,21 @@ export default function About() {
             <div className="grid lg:grid-cols-[1.5fr,1fr] gap-16">
               <div className="space-y-8 text-lg text-base-content/70 leading-relaxed font-medium">
                 <p className="first-letter:text-5xl first-letter:font-black first-letter:text-base-content first-letter:mr-3 first-letter:float-left">
-                  I&apos;m <strong className="text-base-content">Nevin Bali</strong>, a Software Engineer who thrives at the intersection of complex code and seamless user experiences.
-                  Specializing in <strong>Next.js, TypeScript, and FastAPI</strong>, I build systems that aren&apos;t just functional, but scalable for real-world traffic.
+                 I&apos;m <strong className="text-base-content">Nevin Bali</strong>, a Software Engineer who thrives at the intersection of complex systems and real-world impact.
+Specializing in <strong>Next.js, TypeScript, FastAPI, and PostgreSQL</strong>, I build backends that are production-hardened, not just functional.
                 </p>
 
                 <p>
-                  As an <strong className="text-primary">SDE Intern</strong>, I&apos;ve had the privilege of owning entire production lifecycles.
-                  From architecting admin dashboards to integrating secure payment gateways, I focus on building infrastructure that stands the test of live environments.
+                  With <strong className="text-primary">2 production internships</strong>, I&apos;ve owned full development lifecycles — shipping MVPs end-to-end, integrating payment gateways, and maintaining 99%+ uptime across live deployments.
                 </p>
 
                 <p>
-                  My recent obsession? <strong className="text-secondary">GenAI</strong>. I&apos;ve been shipping products powered by
-                  <strong> Groq (Llama v3)</strong>, bridging the gap between raw LLM capabilities and practical, automated tools for modern businesses.
+                  My current focus? <strong className="text-secondary">Agentic AI systems</strong>. From LangGraph multi-agent documentation pipelines to RAG-based compliance intelligence and self-healing SRE platforms — I&apos;m building tools that actually work in production, not just demos.
                 </p>
 
                 <div className="pt-2">
                   <Link
-                    to="https://drive.google.com/file/d/1rOcRvvVAzD3ijvVV9Erhy9030TwhFNzy/view?usp=sharing"
+                    to="https://drive.google.com/file/d/16VLBmsq81isXFO0bdsenJY0wtugAIzi-/view?usp=sharing"
                     target="_blank"
                     className="group flex items-center justify-center gap-3 w-full bg-base-content text-base-100 py-4 rounded-2xl font-bold transition-all hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-primary-content"
                   >

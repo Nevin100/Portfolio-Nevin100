@@ -21,7 +21,7 @@ import image5 from "../assets/Open/image-5.jpg";
 
 import depInspectorImg from "../assets/dep-inspector.jpg";
 
-export const HERO_CONTENT = `Full Stack Software Engineer with hands-on experience building scalable, production-ready web applications using modern JavaScript frameworks and cloud-native tools. I specialize in React, Next.js, TypeScript, and Tailwind CSS on the frontend, and Node.js, Express, MongoDB, PostgreSQL, and FastAPI on the backend. I have worked on real-world MVPs involving secure authentication, REST APIs, third-party integrations, and data-driven dashboards, while actively exploring GenAI, Cloud, and DevOps workflows to deliver reliable, high-performance systems.`;
+export const HERO_CONTENT = `Full Stack SDE with 2 production internships and a self-built SaaS. I work across Next.js, Node.js, FastAPI, and PostgreSQL on the backend, with hands-on experience shipping MVPs, building LangGraph multi-agent systems, and managing cloud-native DevOps pipelines on AWS. Currently building AI-integrated platforms spanning compliance intelligence, agentic documentation, and self-healing SRE systems.`;
 
 export const EXPERIENCES = [
   {

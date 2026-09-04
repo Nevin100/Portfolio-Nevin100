@@ -6,8 +6,8 @@ function Hero() {
   return (
     <>
       <Helmet>
-        <title>Nevin Bali | Full Stack Engineer • GenAI • Cloud & DevOps</title>
-        <meta name="description" content="Nevin Bali is a Full Stack Software Engineer specializing in React, Next.js, GenAI, and cloud-native systems." />
+        <title>Nevin Bali | Full Stack SDE • AI Systems • DevOps</title>
+        <meta name="description" content="Nevin Bali is a Full Stack SDE with 2 production internships and self-built SaaS. Specializes in Next.js, AI-integrated backends, LangGraph agents, and cloud-native DevOps."/>
       </Helmet>
 
       <section
