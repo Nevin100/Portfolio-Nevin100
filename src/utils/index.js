@@ -40,7 +40,13 @@ export const EXPERIENCES = [
     company: "Financea",
     description:
       "Worked in a fast-paced remote startup environment to design and build the core MVP of a data-driven financial platform, focusing on performance, scalability, and clean system architecture.",
-    technologies: ["Next.js", "TypeScript", "MongoDB", "Tailwind CSS", "React 19"],
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "MongoDB",
+      "Tailwind CSS",
+      "React 19",
+    ],
     Tasks:
       "Developed full-stack features, implemented dynamic dashboards, and contributed to the overall product architecture. Collaborated closely with the team to deliver scalable, production-ready features within tight timelines.",
   },
@@ -60,7 +66,11 @@ export const EXPERIENCES = [
     company: "GDGOC – MSIT",
     description:
       "Driving technical growth and development initiatives within a Google-backed developer community by leading teams, managing projects, and organizing large-scale technical events and campaigns.",
-    technologies: ["Department Leadership", "Team Management", "Full Stack Development"],
+    technologies: [
+      "Department Leadership",
+      "Team Management",
+      "Full Stack Development",
+    ],
     Tasks:
       "Supervised development teams, managed departmental operations, and played a key role in organizing workshops, hackathons, and community-driven projects aimed at upskilling students in modern software engineering practices.",
   },
@@ -91,6 +101,50 @@ export const PROJECTS = [
   //   ],
   // },
   {
+    title: "NewsMail – AI-Integrated Newsletter Platform",
+    image: project11,
+    github: "https://github.com/Nevin100/NewsMail",
+    link: "https://newsmail.nevinbali.me/",
+    featured: true,
+    featuredTag: "AI-Integrated",
+    description:
+      "Production newsletter platform on AWS ECS Fargate with ECR, ALB path-based routing, Cloudflare WAF, Groq-powered AI content generation, and bulk email dispatch via Resend — achieving 99.9% uptime.".padEnd(
+        140,
+        " ",
+      ),
+    technologies: [
+      "MERN",
+      "AWS-ECS (FARGATE)",
+      "ECR",
+      "IAM",
+      "Github Actions - CI/CD",
+      "Docker",
+      "AWS-ALB",
+      " CLoudflare- WAF",
+      "Rate-limiter",
+      "Security Manager",
+      "JWT-AUTH",
+      "AWS-Cloudwatch",
+      "Tailwind",
+      "Resend",
+      "Groq API",
+      "Cheerio",
+    ],
+    keyFeatures: [
+      "Deployed on AWS ECS Fargate with ECR, ALB routing, and Cloudflare WAF — 99.9% uptime",
+      "GitHub Actions CI/CD pipeline (dev → main) with automated Docker builds and rolling deployments",
+      "Groq-powered AI content generation with bulk email dispatch via Resend — verified 40–50 recipients/batch",
+      "bcrypt hashing, two-tier rate limiting (auth + general), express-validator for NoSQL injection protection",
+      "AWS Secrets Manager for zero hardcoded credentials",
+      "Cheerio + Axios scraping pipeline for automated tech news ingestion with Excel.js export",
+    ],
+    learnings: [
+      "Worked with Cheerio for DOM parsing and scraping",
+      "Integrated Groq API for summarizing articles",
+      "Handled newsletter scheduling and bulk mailing",
+    ],
+  },
+  {
     title: "dep-inspector-cli – Node.js Dependency Analysis CLI",
     image: depInspectorImg,
     github: "https://github.com/Nevin100/Dep-inspector-nevin",
@@ -98,9 +152,19 @@ export const PROJECTS = [
     featured: true,
     featuredTag: "DevOps NPM Package",
     description:
-      "An open-source CLI tool published on npm that goes beyond npm audit — traces the exact dependency chain that pulled in a vulnerability, with optional AI-powered insights via Groq."
-        .padEnd(140, " "),
-    technologies: ["TypeScript", "Node.js", "Commander.js", "LangChain", "Groq API", "Chalk", "Semver"],
+      "An open-source CLI tool published on npm that goes beyond npm audit — traces the exact dependency chain that pulled in a vulnerability, with optional AI-powered insights via Groq.".padEnd(
+        140,
+        " ",
+      ),
+    technologies: [
+      "TypeScript",
+      "Node.js",
+      "Commander.js",
+      "LangChain",
+      "Groq API",
+      "Chalk",
+      "Semver",
+    ],
     keyFeatures: [
       "Traces full chain: root → pkg → sub-pkg → vulnerable-dep",
       "Vulnerability scan with severity levels and version delta",
@@ -124,9 +188,104 @@ export const PROJECTS = [
     featured: true,
     featuredTag: "Production SaaS",
     description:
-      "Invoicer v1 is a modern, full-stack invoice and finance management platform designed for freelancers and small businesses to manage invoices, expenses, payments, clients, and financial analytics from a single, responsive platform with additional features like Ai Insights for dedicated Section, Invoice tracking status + Secured Credit Based System."
-        .padEnd(140, " "),
-    technologies: ["Next.js (App Router)", "React", "TypeScript", "MongoDB", "Mongoose", "JWT", "Tailwind CSS", "Recharts", "Redux Toolkit", "Razorpay", "ExcelJS", "Tavily API", "Groq"],
+      "Invoicer v1 is a modern, full-stack invoice and finance management platform designed for freelancers and small businesses to manage invoices, expenses, payments, clients, and financial analytics from a single, responsive platform with additional features like Ai Insights for dedicated Section, Invoice tracking status + Secured Credit Based System.".padEnd(
+        140,
+        " ",
+      ),
+    technologies: [
+      "Next.js (App Router)",
+      "React",
+      "TypeScript",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "Tailwind CSS",
+      "Recharts",
+      "Redux Toolkit",
+      "Razorpay",
+      "ExcelJS",
+      "Tavily API",
+      "Groq",
+    ],
+    keyFeatures: [
+      "Invoice lifecycle management with client-linked invoices",
+      "Expense tracking with category-wise analytics & insights",
+      "Interactive financial analytics dashboard (monthly & yearly)",
+      "Secure online payments using Razorpay integration",
+      "Export expenses & financial data to Excel for reporting",
+      "Fully responsive dashboard with sidebar navigation",
+      "Ai Evaluations and insights for financial data using Tavily API & Groq with history management",
+    ],
+    learnings: [
+      "Designed and built a monolithic full-stack architecture using Next.js",
+      "Implemented Cookie based authentication with secure API routes.",
+      "Integrated Razorpay payment flow into invoice lifecycle",
+      "Built real-time financial analytics using aggregated MongoDB data",
+      "Worked on scalable schema design with Mongoose ODM",
+      "Implemented data export functionality using ExcelJS",
+      "Integrated AI insights using Tavily API and Groq for financial data analysis",
+      "Integrated Docker + CI/CD pipelines for streamlined deployment and development workflows",
+    ],
+  },
+  {
+    title: "dep-inspector-cli – Node.js Dependency Analysis CLI",
+    image: depInspectorImg,
+    github: "https://github.com/Nevin100/Dep-inspector-nevin",
+    link: "https://www.npmjs.com/package/dep-inspector-cli",
+    description:
+      "An open-source CLI tool published on npm that goes beyond npm audit — traces the exact dependency chain that pulled in a vulnerability, with optional AI-powered insights via Groq.".padEnd(
+        140,
+        " ",
+      ),
+    technologies: [
+      "TypeScript",
+      "Node.js",
+      "Commander.js",
+      "LangChain",
+      "Groq API",
+      "Chalk",
+      "Semver",
+    ],
+    keyFeatures: [
+      "Traces full chain: root → pkg → sub-pkg → vulnerable-dep",
+      "Vulnerability scan with severity levels and version delta",
+      "Visual dependency tree with outdated version highlights",
+      "Optional AI analysis via Groq (--ai flag)",
+      "JSON output for CI/CD pipeline integration",
+      "240+ weekly downloads on npm",
+    ],
+    learnings: [
+      "Published and maintained a production npm package",
+      "Built a TypeScript CLI with Commander.js and Chalk",
+      "Integrated LangChain + Groq for AI-powered dependency insights",
+      "Designed machine-readable JSON output for CI/CD pipelines",
+    ],
+  },
+  {
+    title: "Invoicer v1 – Invoice & Finance Management Platform",
+    image: project13,
+    github: "https://github.com/Nevin100/Invoicer-v1",
+    link: "https://invoicer.nevinbali.me/",
+    description:
+      "Invoicer v1 is a modern, full-stack invoice and finance management platform designed for freelancers and small businesses to manage invoices, expenses, payments, clients, and financial analytics from a single, responsive platform with additional features like Ai Insights for dedicated Section, Invoice tracking status + Secured Credit Based System.".padEnd(
+        140,
+        " ",
+      ),
+    technologies: [
+      "Next.js (App Router)",
+      "React",
+      "TypeScript",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "Tailwind CSS",
+      "Recharts",
+      "Redux Toolkit",
+      "Razorpay",
+      "ExcelJS",
+      "Tavily API",
+      "Groq",
+    ],
     keyFeatures: [
       "Invoice lifecycle management with client-linked invoices",
       "Expense tracking with category-wise analytics & insights",
@@ -153,8 +312,17 @@ export const PROJECTS = [
     github: "https://github.com/Nevin100/InteliMail-AI-Cold-Email-Generator",
     link: "https://intelimail.nevinbali.me/",
     description:
-      "InteliMail is a lightweight AI-powered web tool that helps users generate formal, personalized cold emails instantly using the Groq LLM model.".padEnd(140, " "),
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Groq API"],
+      "InteliMail is a lightweight AI-powered web tool that helps users generate formal, personalized cold emails instantly using the Groq LLM model.".padEnd(
+        140,
+        " ",
+      ),
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Groq API",
+    ],
     keyFeatures: [
       "Generate formal emails based on user details using Groq LLM",
       "Supports name, position, role, qualities, and social links",
@@ -175,13 +343,35 @@ export const PROJECTS = [
     featured: true,
     featuredTag: "AI-Integrated",
     description:
-      "NewsMail is a powerful MERN stack newsletter platform that allows scraping news articles, managing subscribers, and sending bulk emails with AI-enhanced summaries.".padEnd(140, " "),
-    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind", "Nodemailer", "Groq API", "Cheerio"],
+      "Production newsletter platform on AWS ECS Fargate with ECR, ALB path-based routing, Cloudflare WAF, Groq-powered AI content generation, and bulk email dispatch via Resend — achieving 99.9% uptime.".padEnd(
+        140,
+        " ",
+      ),
+    technologies: [
+      "MERN",
+      "AWS-ECS (FARGATE)",
+      "ECR",
+      "IAM",
+      "Github Actions - CI/CD",
+      "Docker",
+      "AWS-ALB",
+      " CLoudflare- WAF",
+      "Rate-limiter",
+      "Security Manager",
+      "JWT-AUTH",
+      "AWS-Cloudwatch",
+      "Tailwind",
+      "Resend",
+      "Groq API",
+      "Cheerio",
+    ],
     keyFeatures: [
-      "Scrapes and summarizes news content using Groq API",
-      "Bulk email sending via Nodemailer",
-      "Admin dashboard for newsletter management",
-      "AI integration for custom content generation",
+      "Deployed on AWS ECS Fargate with ECR, ALB routing, and Cloudflare WAF — 99.9% uptime",
+      "GitHub Actions CI/CD pipeline (dev → main) with automated Docker builds and rolling deployments",
+      "Groq-powered AI content generation with bulk email dispatch via Resend — verified 40–50 recipients/batch",
+      "bcrypt hashing, two-tier rate limiting (auth + general), express-validator for NoSQL injection protection",
+      "AWS Secrets Manager for zero hardcoded credentials",
+      "Cheerio + Axios scraping pipeline for automated tech news ingestion with Excel.js export",
     ],
     learnings: [
       "Worked with Cheerio for DOM parsing and scraping",
@@ -195,8 +385,19 @@ export const PROJECTS = [
     github: "https://github.com/Nevin100/HireWire",
     link: "https://hirewire.nevinbali.me/",
     description:
-      "HireWire is an AI-powered interview prep tool that generates tailored technical questions based on your role and experience using Groq API.".padEnd(140, " "),
-    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind", "Groq API"],
+      "HireWire is an AI-powered interview prep tool that generates tailored technical questions based on your role and experience using Groq API.".padEnd(
+        140,
+        " ",
+      ),
+    technologies: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "Tailwind",
+      "Groq API",
+    ],
     keyFeatures: [
       "AI-generated interview questions using Groq API",
       "Session-based prep with role and domain context",
@@ -212,8 +413,18 @@ export const PROJECTS = [
     github: "https://github.com/Nevin100/PagePulse",
     link: "https://pagepulse.nevinbali.me/",
     description:
-      "PagePulse is a full-stack bookstore with user authentication, product management, and admin dashboard secured by Firebase and JWT.".padEnd(140, " "),
-    technologies: ["React.js", "Node.js", "MongoDB", "JWT", "Redux Toolkit", "Firebase"],
+      "PagePulse is a full-stack bookstore with user authentication, product management, and admin dashboard secured by Firebase and JWT.".padEnd(
+        140,
+        " ",
+      ),
+    technologies: [
+      "React.js",
+      "Node.js",
+      "MongoDB",
+      "JWT",
+      "Redux Toolkit",
+      "Firebase",
+    ],
     keyFeatures: [
       "Role-based dashboards and product CRUD",
       "JWT and Firebase for secure dual authentication",
@@ -229,8 +440,19 @@ export const PROJECTS = [
     github: "https://github.com/Nevin100/Sociopedia",
     link: "#",
     description:
-      "Sociopedia is a MERN social platform with real-time posts, likes, comments, friends, and profile management features.".padEnd(140, " "),
-    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind", "Material UI"],
+      "Sociopedia is a MERN social platform with real-time posts, likes, comments, friends, and profile management features.".padEnd(
+        140,
+        " ",
+      ),
+    technologies: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "Tailwind",
+      "Material UI",
+    ],
     keyFeatures: [
       "Create, like, and comment on posts",
       "Manage friends and user profiles securely",
@@ -246,8 +468,19 @@ export const PROJECTS = [
     github: "https://github.com/Nevin100/Notify",
     link: "https://notify.nevinbali.me/",
     description:
-      "Notify is a minimalist notes app supporting CRUD, tagging, pinning, search, and secure JWT-based user authentication.".padEnd(140, " "),
-    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "TailwindCSS"],
+      "Notify is a minimalist notes app supporting CRUD, tagging, pinning, search, and secure JWT-based user authentication.".padEnd(
+        140,
+        " ",
+      ),
+    technologies: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "TailwindCSS",
+    ],
     keyFeatures: [
       "Note creation, editing, pinning, and deletion",
       "Tag-based filtering and search functionality",
@@ -263,7 +496,10 @@ export const PROJECTS = [
     github: "https://github.com/Nevin100/Restaura",
     link: "https://stately-sfogliatella-4529b5.netlify.app/",
     description:
-      "Restaura is a responsive restaurant website featuring animations, menus, and highlights with clean UI/UX using React and Tailwind.".padEnd(140, " "),
+      "Restaura is a responsive restaurant website featuring animations, menus, and highlights with clean UI/UX using React and Tailwind.".padEnd(
+        140,
+        " ",
+      ),
     technologies: ["React.js", "TailwindCSS", "Framer Motion", "HTML"],
     keyFeatures: [
       "Responsive layout for all screen sizes",
@@ -280,8 +516,19 @@ export const PROJECTS = [
     github: "https://github.com/Nevin100/Plantventory",
     link: "#",
     description:
-      `Welcome to Plantventory, your personal jungle journal! A full-stack, modern-as-heck plant inventory app built with Next.js, TypeScript, Prisma, Neon (PostgreSQL), Stack Auth, and UploadThing. Curate, care for, and celebrate your favorite medicinal herbs, houseplants, and garden greens — all in one smooth digital space.`.padEnd(140, " "),
-    technologies: ["Next.js", "TypeScript", "Prisma", "Neon (PostgreSQL)", "Stack Auth", "UploadThing", "Tailwind CSS"],
+      `Welcome to Plantventory, your personal jungle journal! A full-stack, modern-as-heck plant inventory app built with Next.js, TypeScript, Prisma, Neon (PostgreSQL), Stack Auth, and UploadThing. Curate, care for, and celebrate your favorite medicinal herbs, houseplants, and garden greens — all in one smooth digital space.`.padEnd(
+        140,
+        " ",
+      ),
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "Neon (PostgreSQL)",
+      "Stack Auth",
+      "UploadThing",
+      "Tailwind CSS",
+    ],
     keyFeatures: [
       "Custom Plant Inventory: Add, edit, and organize all your leafy friends with love and labels",
       "Smart Notes to log care routines and growth stages",
@@ -297,8 +544,22 @@ export const PROJECTS = [
     github: "https://github.com/Nevin100/Baatein",
     link: "https://baatein-7epj.onrender.com/",
     description:
-      "Baatein is a MERN chat app with real-time messaging via Socket.io, dynamic themes, and secure authentication using JWT.".padEnd(140, " "),
-    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.io", "JWT", "Bcrypt.js", "Zustand", "TailwindCSS", "DaisyUI"],
+      "Baatein is a MERN chat app with real-time messaging via Socket.io, dynamic themes, and secure authentication using JWT.".padEnd(
+        140,
+        " ",
+      ),
+    technologies: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Socket.io",
+      "JWT",
+      "Bcrypt.js",
+      "Zustand",
+      "TailwindCSS",
+      "DaisyUI",
+    ],
     keyFeatures: [
       "Real-time messaging with Socket.io",
       "Dynamic themes using DaisyUI components",
@@ -314,8 +575,20 @@ export const PROJECTS = [
     github: "https://github.com/Nevin100/S.P.A.R.K",
     link: "#",
     description:
-      `A revolutionary platform for students, societies, sponsors, and curious minds in tech. SPARK bridges skill gaps by connecting academia, industry, and hackathons to build job-ready developers.`.padEnd(140, " "),
-    technologies: ["React.js", "Node.js", "Express", "Tailwind CSS", "Firebase Auth", "JWT", "MongoDB", "Cloudinary"],
+      `A revolutionary platform for students, societies, sponsors, and curious minds in tech. SPARK bridges skill gaps by connecting academia, industry, and hackathons to build job-ready developers.`.padEnd(
+        140,
+        " ",
+      ),
+    technologies: [
+      "React.js",
+      "Node.js",
+      "Express",
+      "Tailwind CSS",
+      "Firebase Auth",
+      "JWT",
+      "MongoDB",
+      "Cloudinary",
+    ],
     keyFeatures: [
       "Industry Challenges: Solve real tasks by companies",
       "Multi-Chapter Societies: Enable cross-campus collaborations",
@@ -331,8 +604,16 @@ export const PROJECTS = [
     github: "https://github.com/Nevin100/ReactIn3D",
     link: "https://react-in3-d.vercel.app/",
     description:
-      `ReactIn3D is a futuristic 3D email platform for developers. Built with React.js, Tailwind CSS, and Spline, it redefines frontend presentation with stunning visuals.`.padEnd(140, " "),
-    technologies: ["React.js", "Tailwind CSS", "Spline 3D", "Vercel (Deployment)"],
+      `ReactIn3D is a futuristic 3D email platform for developers. Built with React.js, Tailwind CSS, and Spline, it redefines frontend presentation with stunning visuals.`.padEnd(
+        140,
+        " ",
+      ),
+    technologies: [
+      "React.js",
+      "Tailwind CSS",
+      "Spline 3D",
+      "Vercel (Deployment)",
+    ],
     keyFeatures: [
       "3D Interactive Visuals powered by Spline",
       "Fully Responsive Layout with Flexbox and Tailwind",
@@ -348,7 +629,10 @@ export const PROJECTS = [
     github: "#",
     link: "#",
     description:
-      "A Power BI dashboard analyzing employee attrition by demographics to identify HR trends and provide actionable insights.".padEnd(140, " "),
+      "A Power BI dashboard analyzing employee attrition by demographics to identify HR trends and provide actionable insights.".padEnd(
+        140,
+        " ",
+      ),
     technologies: ["Power BI"],
     keyFeatures: [
       "Interactive attrition metrics by age and dept",
@@ -365,7 +649,10 @@ export const PROJECTS = [
     github: "#",
     link: "#",
     description:
-      "Power BI dashboard visualizing savings, investments, and revenues to deliver comprehensive financial insights to decision-makers.".padEnd(140, " "),
+      "Power BI dashboard visualizing savings, investments, and revenues to deliver comprehensive financial insights to decision-makers.".padEnd(
+        140,
+        " ",
+      ),
     technologies: ["Power BI"],
     keyFeatures: [
       "Consolidated KPIs across financial metrics",
@@ -386,7 +673,14 @@ export const OpenSourceContributionsData = [
     repo: "https://github.com/Nevin100/Dep-inspector-nevin",
     description:
       "Built and published an open-source CLI tool on npm for analyzing Node.js project dependencies. Traces the exact dependency chain that pulled in a vulnerable package, with AI-powered insights via Groq, JSON output for CI/CD pipelines, and 240+ weekly downloads.",
-    technologies: ["TypeScript", "Node.js", "Commander.js", "LangChain", "Groq API", "npm Registry"],
+    technologies: [
+      "TypeScript",
+      "Node.js",
+      "Commander.js",
+      "LangChain",
+      "Groq API",
+      "npm Registry",
+    ],
     link: "https://www.npmjs.com/package/dep-inspector-cli",
   },
   {
@@ -396,7 +690,13 @@ export const OpenSourceContributionsData = [
     repo: "https://github.com/Nevin100/CodeKshetra2.0",
     description:
       "Contributed to the official MLH-backed hackathon website by developing scalable and visually engaging frontend components. Implemented smooth animations and responsive layouts using React and Tailwind CSS, ensuring an optimized user experience for large-scale event traffic. Collaborated closely with the offline operations team to coordinate logistics with major technology partners.",
-    technologies: ["React.js", "TypeScript", "Tailwind CSS", "UI Animations", "Responsive Design"],
+    technologies: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "UI Animations",
+      "Responsive Design",
+    ],
     link: "https://code-kshetra2-0.vercel.app/#/",
   },
   {
@@ -406,7 +706,12 @@ export const OpenSourceContributionsData = [
     repo: "https://github.com/Nevin100/pears-hack-website",
     description:
       "Led frontend development and moderated participant workflows for a global-level hackathon. Built dynamic event modules and onboarding flows to streamline registrations and participation, while ensuring a seamless and accessible user experience throughout the event lifecycle.",
-    technologies: ["React.js", "Tailwind CSS", "User Experience Design", "Event Systems"],
+    technologies: [
+      "React.js",
+      "Tailwind CSS",
+      "User Experience Design",
+      "Event Systems",
+    ],
     link: "https://pears-hackathon.vercel.app/",
   },
   {
@@ -416,7 +721,13 @@ export const OpenSourceContributionsData = [
     repo: "https://github.com/Nevin100/MUJ-Hack-Website",
     description:
       "Designed and developed a fully responsive hackathon website during active participation at MUJ Hackathon. Delivered performance-optimized UI components using React and TypeScript under strict deadlines, focusing on cross-device compatibility and clean frontend architecture.",
-    technologies: ["React.js", "TypeScript", "Tailwind CSS", "Responsive Web Design", "Performance Optimization"],
+    technologies: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Responsive Web Design",
+      "Performance Optimization",
+    ],
     link: "#",
   },
   {
@@ -426,7 +737,13 @@ export const OpenSourceContributionsData = [
     repo: "https://github.com/Nevin100/Geek-Room",
     description:
       "Developed and maintained the official Geekroom website with a strong focus on responsive design, performance optimization, and scalable frontend structure. Leveraged modern frameworks and styling solutions to deliver a polished and production-ready community platform.",
-    technologies: ["Next.js", "SASS", "Tailwind CSS", "Responsive UI", "Frontend Architecture"],
+    technologies: [
+      "Next.js",
+      "SASS",
+      "Tailwind CSS",
+      "Responsive UI",
+      "Frontend Architecture",
+    ],
     link: "https://www.geekroom.in/",
   },
   {
@@ -436,7 +753,13 @@ export const OpenSourceContributionsData = [
     repo: "https://github.com/Nevin100/gdgoc-website",
     description:
       "Led and supervised the frontend development team for the official GDGOC website. Oversaw UI architecture, animation workflows, and module-level execution using React, Tailwind CSS, and Framer Motion. Played a key role in coordinating team deliverables and maintaining high-quality engineering standards for Google-backed community initiatives.",
-    technologies: ["React.js", "Framer Motion", "Tailwind CSS", "Team Leadership", "Frontend Supervision"],
+    technologies: [
+      "React.js",
+      "Framer Motion",
+      "Tailwind CSS",
+      "Team Leadership",
+      "Frontend Supervision",
+    ],
     link: "#",
   },
 ];
