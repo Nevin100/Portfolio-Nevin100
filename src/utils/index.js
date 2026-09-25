@@ -12,6 +12,7 @@ import project10 from "../assets/projects/9.png";
 import project11 from "../assets/projects/project11.jpg";
 import project12 from "../assets/projects/project12.jpg";
 import project13 from "../assets/projects/project13.png";
+import project14 from "../assets/projects/project14.png";
 
 import image1 from "../assets/Open/image1.jpg";
 import image2 from "../assets/Open/image-2.jpg";
@@ -77,29 +78,60 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
-  // {
-  //   title: "LangChain & LangGraph Bootcamp — Self-Built Course for Developers",
-  //   image: null,
-  //   github: "https://github.com/Nevin100/YOUR_BOOTCAMP_REPO",
-  //   link: "https://github.com/Nevin100/YOUR_BOOTCAMP_REPO",
-  //   featured: true,
-  //   featuredTag: "Teaching",
-  //   description:
-  //     "A self-designed, ground-up LangChain & LangGraph bootcamp built to teach other developers how to build production-grade GenAI applications — agents, chains, memory, and graph-based orchestration explained through hands-on modules."
-  //       .padEnd(140, " "),
-  //   technologies: ["LangChain", "LangGraph", "Python", "Groq API", "GenAI"],
-  //   keyFeatures: [
-  //     "Structured, module-by-module curriculum from fundamentals to agentic workflows",
-  //     "Hands-on projects covering chains, memory, tools, and LangGraph state machines",
-  //     "Built for other developers to self-learn production GenAI patterns",
-  //     "Continuously updated as LangChain/LangGraph APIs evolve",
-  //   ],
-  //   learnings: [
-  //     "Deepened GenAI application-architecture knowledge by teaching it end-to-end",
-  //     "Designed a beginner-to-advanced curriculum for a fast-moving ecosystem",
-  //     "Practiced technical writing and instructional design for developers",
-  //   ],
-  // },
+  {
+  title: "DevDocAI – Multi-Agent Documentation Platform",
+  image: project14,
+  github: "https://github.com/Nevin100/DevdocAI",
+  link: "https://devdocai.nevinbali.me/",
+  featured: true,
+  featuredTag: "LangGraph AI System",
+  description:
+    "Production multi-agent LangGraph system that auto-generates and updates engineering documentation from GitHub codebases — AST-level parsing, human-in-the-loop review, and diff-aware incremental runs, deployed on AWS ECS Fargate.".padEnd(
+      140,
+      " ",
+    ),
+  technologies: [
+    "Python",
+    "FastAPI",
+    "LangGraph",
+    "Groq API",
+    "Qdrant",
+    "PostgreSQL",
+    "Redis",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "DaisyUI",
+    "Tavily API",
+    "sentence-transformers",
+    "LangSmith",
+    "MCP",
+    "Docker",
+    "AWS-ECS (FARGATE)",
+    "ECR",
+    "Github Actions - CI/CD",
+    "AWS-ALB",
+    "Cloudflare",
+    "AWS Secrets Manager",
+    "JWT-AUTH",
+  ],
+  keyFeatures: [
+    "6-agent LangGraph pipeline: diff-aware AST parser → batched LLM doc generator → Tavily researcher → HITL review → Qdrant publisher",
+    "Incremental runs via last_processed_commit — only changed files re-parsed and re-documented, PR-merge webhook auto re-triggers",
+    "Multi-key Groq round-robin pool (6 keys, 429-resilient) — 20+ file repos documented in under a minute",
+    "Human-in-the-loop checkpoint with PostgreSQL checkpointer — approve/reject before anything publishes",
+    "Onboarding RAG chatbot answering from live codebase via Qdrant vector search",
+    "40-file repo gate (HTTP 413) instead of silent timeouts, with honest error UX in the dashboard",
+    "Hardened auth: httpOnly secure cookies, CSP headers, Fernet-encrypted tokens, Cloudflare + ALB in front of ECS",
+  ],
+  learnings: [
+    "Built a production multi-agent system with LangGraph state graphs, HITL interrupts, and async checkpointing",
+    "Fixed Neon idle-connection kills by switching the checkpointer to a proper async connection pool",
+    "Implemented diff-based incremental processing to avoid full-repo re-runs on every trigger",
+    "Debugged a stale ECS task-definition SHA digest that made green CI/CD deploys silently ship nothing",
+    "Learned create_all() never alters tables — production schema changes need real migrations",
+  ],
+},
   {
     title: "NewsMail – AI-Integrated Newsletter Platform",
     image: project11,
@@ -227,6 +259,58 @@ export const PROJECTS = [
       "Integrated Docker + CI/CD pipelines for streamlined deployment and development workflows",
     ],
   },
+  {
+  title: "DevDocAI – Multi-Agent Documentation Platform",
+  image: project14,
+  github: "https://github.com/Nevin100/DevdocAI",
+  link: "https://devdocai.nevinbali.me/",
+  description:
+    "Production multi-agent LangGraph system that auto-generates and updates engineering documentation from GitHub codebases — AST-level parsing, human-in-the-loop review, and diff-aware incremental runs, deployed on AWS ECS Fargate.".padEnd(
+      140,
+      " ",
+    ),
+  technologies: [
+    "Python",
+    "FastAPI",
+    "LangGraph",
+    "Groq API",
+    "Qdrant",
+    "PostgreSQL",
+    "Redis",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "DaisyUI",
+    "Tavily API",
+    "sentence-transformers",
+    "LangSmith",
+    "MCP",
+    "Docker",
+    "AWS-ECS (FARGATE)",
+    "ECR",
+    "Github Actions - CI/CD",
+    "AWS-ALB",
+    "Cloudflare",
+    "AWS Secrets Manager",
+    "JWT-AUTH",
+  ],
+  keyFeatures: [
+    "6-agent LangGraph pipeline: diff-aware AST parser → batched LLM doc generator → Tavily researcher → HITL review → Qdrant publisher",
+    "Incremental runs via last_processed_commit — only changed files re-parsed and re-documented, PR-merge webhook auto re-triggers",
+    "Multi-key Groq round-robin pool (6 keys, 429-resilient) — 20+ file repos documented in under a minute",
+    "Human-in-the-loop checkpoint with PostgreSQL checkpointer — approve/reject before anything publishes",
+    "Onboarding RAG chatbot answering from live codebase via Qdrant vector search",
+    "40-file repo gate (HTTP 413) instead of silent timeouts, with honest error UX in the dashboard",
+    "Hardened auth: httpOnly secure cookies, CSP headers, Fernet-encrypted tokens, Cloudflare + ALB in front of ECS",
+  ],
+  learnings: [
+    "Built a production multi-agent system with LangGraph state graphs, HITL interrupts, and async checkpointing",
+    "Fixed Neon idle-connection kills by switching the checkpointer to a proper async connection pool",
+    "Implemented diff-based incremental processing to avoid full-repo re-runs on every trigger",
+    "Debugged a stale ECS task-definition SHA digest that made green CI/CD deploys silently ship nothing",
+    "Learned create_all() never alters tables — production schema changes need real migrations",
+  ],
+},
   {
     title: "dep-inspector-cli – Node.js Dependency Analysis CLI",
     image: depInspectorImg,
