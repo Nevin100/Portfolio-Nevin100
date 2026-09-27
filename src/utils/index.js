@@ -22,7 +22,7 @@ import image5 from "../assets/Open/image-5.jpg";
 
 import depInspectorImg from "../assets/dep-inspector.jpg";
 
-export const HERO_CONTENT = `Full Stack SDE with 2 production internships and a self-built SaaS. I work across Next.js, Node.js, FastAPI, and PostgreSQL on the backend, with hands-on experience shipping MVPs, building LangGraph multi-agent systems, and managing cloud-native DevOps pipelines on AWS. Currently building AI-integrated platforms spanning compliance intelligence, agentic documentation, and self-healing SRE systems.`;
+export const HERO_CONTENT = `Full-Stack Engineer who ships to production, not demos. 2 internships, a live SaaS, and a multi-agent LangGraph platform running on AWS ECS — I build across Next.js, FastAPI, and PostgreSQL: agentic AI systems (docs that write themselves, newsletters that write themselves) on top of cloud-native DevOps I actually run myself.`;
 
 export const EXPERIENCES = [
   {
