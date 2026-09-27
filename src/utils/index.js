@@ -26,6 +26,86 @@ export const HERO_CONTENT = `Full-Stack Engineer who ships to production, not de
 
 export const EXPERIENCES = [
   {
+    Duration: "Sep 2026 – Present",
+    role: "Growth and Operations Lead",
+    company: "Geek Room – Global Team",
+    description:
+      "Leading growth and operations for Geek Room at a global level — driving community expansion, cross-chapter collaboration, and operational excellence across the organization's worldwide teams.",
+    technologies: [
+      "Growth Strategy",
+      "Operations",
+      "Team Leadership",
+      "Community Building",
+    ],
+    Tasks:
+      "Owning growth initiatives and day-to-day operations for the global team. Coordinating across chapters, streamlining processes, and scaling community programs that connect developers worldwide.",
+  },
+  {
+    Duration: "Sep 2025 – Sep 2026",
+    role: "Head of Development Department",
+    company: "Geek Room – MSIT",
+    description:
+      "Served as the Development Head of one of India's largest student-led tech societies — overseeing development projects, guiding community initiatives, and fostering collaboration among developers across various domains.",
+    technologies: [
+      "Leading Development Teams",
+      "Full-Stack Development",
+      "React.js",
+      "Node.js",
+    ],
+    Tasks:
+      "Led the development department end-to-end: set technical direction, shipped community projects, mentored developers across domains, and drove collaboration between teams on large-scale initiatives.",
+  },
+  {
+    Duration: "Feb 2025 – Sep 2025",
+    role: "Deputy Head of Development Department",
+    company: "Geek Room – MSIT",
+    description:
+      "Served as the Deputy Head of one of India's largest student-led tech societies — overseeing development projects, guiding community initiatives, and fostering collaboration among developers.",
+    technologies: [
+      "Department Management",
+      "Full-Stack Development",
+      "React.js",
+      "Node.js",
+    ],
+    Tasks:
+      "Supported the Head in running the development department: coordinated project teams, mentored 50+ developers, and helped execute development-focused events and collaborative initiatives.",
+  },
+  {
+    Duration: "Oct 2024 – Feb 2025",
+    role: "Web Developer",
+    company: "Geek Room – MSIT",
+    description:
+      "Started as a Web Developer contributing to community projects and the official Geek Room website — building responsive, production-ready frontend experiences.",
+    technologies: ["React.js", "Next.js", "Tailwind CSS"],
+    Tasks:
+      "Built and maintained frontend modules for community platforms, focusing on responsive design and clean, reusable components.",
+  },
+  {
+    Duration: "Sep 2025 – Sep 2026",
+    role: "Operation Lead – Development",
+    company: "GDGOC – MSIT",
+    description:
+      "Operation Lead for the Development department at Google Developer Groups on Campus (GDGOC), MSIT — managing all campaigns and operations for the development department and coordinating across teams.",
+    technologies: ["Team Management", "Team Building", "Operations"],
+    Tasks:
+      "Ran operations for the development department: planned and executed campaigns, coordinated between teams, and kept delivery on track across workshops, hackathons, and community programs.",
+  },
+  {
+    Duration: "Oct 2024 – Sep 2025",
+    role: "Deputy Head – Development",
+    company: "GDGOC – MSIT",
+    description:
+      "Deputy Head of Development at GDGOC MSIT — leading and coordinating development initiatives and mentoring junior developers in a Google-backed developer community.",
+    technologies: [
+      "Web Development",
+      "Full-Stack Development",
+      "Team Leadership",
+      "Framer Motion",
+    ],
+    Tasks:
+      "Led development initiatives, mentored junior developers, and supervised frontend execution for the official GDGOC website — overseeing UI architecture and animation workflows with React, Tailwind CSS, and Framer Motion.",
+  },
+  {
     Duration: "Aug 2025 – Mar 2026",
     role: "Full Stack Web Developer Intern",
     company: "Square Education Pvt. Ltd.",
@@ -50,30 +130,6 @@ export const EXPERIENCES = [
     ],
     Tasks:
       "Developed full-stack features, implemented dynamic dashboards, and contributed to the overall product architecture. Collaborated closely with the team to deliver scalable, production-ready features within tight timelines.",
-  },
-  {
-    Duration: "Feb 2025 – Present",
-    role: "Deputy Head of Development",
-    company: "Geek Room – MSIT",
-    description:
-      "Leading development initiatives for a large-scale technical community, focusing on mentoring, project execution, and strengthening full-stack engineering practices among members.",
-    technologies: ["React.js", "Node.js", "Tailwind CSS", "MongoDB"],
-    Tasks:
-      "Mentoring and leading 50+ developers, overseeing technical projects, organizing development-focused events, and driving hands-on learning through real-world full-stack applications and collaborative initiatives.",
-  },
-  {
-    Duration: "Oct 2024 – Present",
-    role: "Deputy Head of Development",
-    company: "GDGOC – MSIT",
-    description:
-      "Driving technical growth and development initiatives within a Google-backed developer community by leading teams, managing projects, and organizing large-scale technical events and campaigns.",
-    technologies: [
-      "Department Leadership",
-      "Team Management",
-      "Full Stack Development",
-    ],
-    Tasks:
-      "Supervised development teams, managed departmental operations, and played a key role in organizing workshops, hackathons, and community-driven projects aimed at upskilling students in modern software engineering practices.",
   },
 ];
 
