@@ -1,11 +1,11 @@
 # 🚀 Nevin Bali — Full Stack Engineer Portfolio
 
-Welcome to my personal developer portfolio.  
-This project represents my journey as a **Full Stack Software Engineer** || **DevOps** || **Gen AI**, showcasing real-world projects, technical expertise, and hands-on experience with modern web technologies, cloud systems, and scalable application architecture.
+Welcome to my personal developer portfolio.
+This project represents my journey as a **Full Stack Software Engineer** || **DevOps** || **GenAI Engineer** — showcasing production-grade systems, agentic AI platforms, and cloud-native engineering, from multi-agent LangGraph pipelines to live SaaS products running on AWS.
 <br/>
 <br/>
 
-<img width="1177" height="577" alt="image" src="https://github.com/user-attachments/assets/ebb43afe-2f14-41e5-a8e2-6b95e7df633c" />
+<img width="1244" height="591" alt="image" src="https://github.com/user-attachments/assets/54a45269-9db7-4a57-b72f-1914d07c7288" />
 
 🔗 **Live Portfolio**: https://nevinbali.me
 
@@ -13,25 +13,29 @@ This project represents my journey as a **Full Stack Software Engineer** || **De
 
 ## 👋 About Me
 
-I am a **Full Stack Engineer** with experience building **production-ready web applications**, interactive dashboards, and SaaS-style platforms.  
-My work spans **frontend engineering, backend systems, authentication, analytics, and cloud deployment**, with a strong focus on clean UI, performance, and real-world usability.
+I'm a **Full-Stack Engineer who ships to production, not demos** — 2 production internships, a live SaaS, and a multi-agent LangGraph documentation platform running on AWS ECS Fargate.
+My work spans **frontend engineering, backend systems, agentic AI, and cloud-native DevOps** — Next.js, FastAPI, and PostgreSQL on the build side; ECS Fargate + Cloudflare + GitHub Actions CI/CD on the ship side.
 
-This portfolio is designed to reflect:
-- My technical depth
-- My problem-solving approach
-- My experience with modern development workflows
+Currently **Growth and Operations Lead @ Geek Room (Global Team)** — previously Head of Development @ Geek Room MSIT and Operation Lead @ GDGOC MSIT.
+
+This portfolio reflects:
+- Production systems, not toy projects — real users, real uptime
+- Agentic AI engineering — LangGraph multi-agent systems, RAG, LLM integrations
+- Cloud-native DevOps — I deploy and run what I build
 
 ---
 
 ## ✨ Key Features
 
 - ⚛️ **Modern React Architecture** — Clean, component-driven design
-- 🎨 **Tailwind CSS** — Responsive, scalable, and consistent UI
-- 🎥 **Framer Motion Animations** — Subtle, professional motion design
+- 🎨 **Tailwind CSS + DaisyUI** — Responsive, themeable, consistent UI
+- 🎥 **Framer Motion Animations** — Scroll-triggered reveals, layout-animated cards
+- 🔍 **Live Project Search** — Filter projects by tech stack or title in real time
 - 📱 **Fully Responsive Layout** — Optimized for mobile, tablet & desktop
 - 🧠 **SEO Optimized Pages** — Page-level metadata using React Helmet
-- 💼 **Projects Showcase** — Real-world, full-stack & AI-powered projects
-- 🧩 **Experience & Activities Sections** — Internships, leadership & hackathons
+- 💼 **Featured + Filterable Projects Showcase** — Production SaaS, GenAI & DevOps work
+- 🧩 **Experience Timeline** — Internships, leadership roles & community work
+- 🤝 **Open Source Section** — npm packages, hackathons & community contributions
 - ⏳ **Minimal Professional Loader** — Optimized for performance & UX
 
 ---
@@ -40,25 +44,37 @@ This portfolio is designed to reflect:
 
 ### Frontend
 - React.js
-- Tailwind CSS
+- TypeScript
+- Next.js (App Router)
+- Tailwind CSS + DaisyUI
 - Framer Motion
 - React Router
 - React Helmet (SEO)
-
-### Backend & Systems (Projects showcased)
-- Node.js & Express
-- Next.js (App Router)
-- MongoDB & Mongoose
-- PostgreSQL (Neon)
-- JWT Authentication
-- FastAPI
-- Razorpay Integration
-
-### Tooling & Deployment
-- Git & GitHub
-- Vercel
-- Docker (project-level)
 - Redux Toolkit
+
+### Backend & AI Systems
+- Node.js & Express
+- FastAPI (Python)
+- LangGraph — multi-agent systems
+- Groq API, Tavily API, LangChain
+- Qdrant (vector DB), Redis
+- sentence-transformers, LangSmith
+- MongoDB & Mongoose
+- PostgreSQL (Neon), Prisma
+- JWT Authentication
+- Razorpay & PayU Integration
+- Socket.io
+
+### DevOps & Cloud
+- AWS ECS (Fargate), ECR, ALB
+- Docker
+- GitHub Actions — CI/CD
+- Cloudflare (WAF, CDN)
+- AWS Secrets Manager, CloudWatch, IAM
+- Vercel, Render, Netlify
+
+### Tooling & Analytics
+- Git & GitHub
 - Power BI (Analytics projects)
 
 ---
@@ -66,26 +82,30 @@ This portfolio is designed to reflect:
 ## 📂 Featured Work
 
 This portfolio highlights:
-- **Full Stack SaaS applications**
-- **AI-powered tools (GenAI projects)**
-- **Invoice & finance management systems**
-- **Analytics dashboards**
-- **Hackathon & open-source contributions**
+- **DevDocAI** — Multi-agent LangGraph platform that auto-generates engineering docs from GitHub repos (AWS ECS, Qdrant RAG, human-in-the-loop review)
+- **Invoicer v1** — Production SaaS: invoicing, expenses, Razorpay payments, AI financial insights
+- **NewsMail** — AI newsletter platform on AWS ECS Fargate, 99.9% uptime, bulk dispatch via Resend
+- **dep-inspector-cli** — npm package (240+ weekly downloads) for Node.js dependency vulnerability tracing
+- **GenAI tools** — InteliMail, HireWire and more, powered by Groq
+- **Analytics dashboards** — Power BI projects
+- **Open source & hackathons** — MLH-backed events, society websites, community platforms
 
 Each project includes:
 - Tech stack
 - Key features
 - Learnings
-- GitHub repository links
+- GitHub repository + live demo links
 
 ---
 
 ## 📸 Screenshots
-<img width="1199" height="579" alt="image" src="https://github.com/user-attachments/assets/ce56ad6f-abd1-460c-9035-a515167bdbea" />
-<img width="1210" height="589" alt="image" src="https://github.com/user-attachments/assets/44cce238-4025-4f5e-9dbb-6134113822f9" />
-<img width="1187" height="595" alt="image" src="https://github.com/user-attachments/assets/a2429d70-441b-4d89-9eec-14e175686bdc" />
-<img width="1146" height="585" alt="image" src="https://github.com/user-attachments/assets/c92fbb8d-4881-4486-a9a4-7a96cf064924" />
-<img width="1235" height="579" alt="image" src="https://github.com/user-attachments/assets/977a1169-3552-4253-8ccc-c4f0234d25c1" />
+<img width="1109" height="605" alt="image" src="https://github.com/user-attachments/assets/cb8231f1-d4f9-4921-88f5-aae41cc71b5c" />
+<img width="1117" height="568" alt="image" src="https://github.com/user-attachments/assets/284655e8-08ba-4492-8278-38f10e04e074" />
+<img width="1129" height="607" alt="image" src="https://github.com/user-attachments/assets/f2a256c3-41f9-4d59-9bb3-95ecee477dd4" />
+<img width="1226" height="610" alt="image" src="https://github.com/user-attachments/assets/d0d70ca7-acc1-4532-8db0-693385e4fc49" />
+<img width="1109" height="586" alt="image" src="https://github.com/user-attachments/assets/036d8f43-b955-488e-88eb-d2623076fe3f" />
+<img width="1130" height="604" alt="image" src="https://github.com/user-attachments/assets/242e-4205-882f-363081bf0641" />
+
 
 ---
 
